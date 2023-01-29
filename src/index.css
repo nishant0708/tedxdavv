@@ -1,0 +1,42 @@
+/* TAILWIND */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+body{
+  position:fixed;
+}
+
+
+/* TEDxDAVV Inter FONT */
+@font-face {
+  font-family: "Inter";
+  src: local("GoldmanBold"),
+   url("./fonts/Inter-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("GoldmanBold"),
+   url("./fonts/Inter-Light.ttf") format("truetype");
+  font-weight: lighter;
+}
+
+.font-inter-bold{
+  font-family: helvetica, Inter;
+  font-weight: bold;
+}
+
+.font-inter-light{
+  font-family: helvetica, Inter;
+  font-weight: lighter;
+}
