@@ -105,8 +105,13 @@ function Home(){
     directionalLight.position.set(2, 2, 2)
     scene.add(directionalLight)
 
+    const helper_directional = new THREE.DirectionalLightHelper( directionalLight );
+    scene.add( helper_directional );
+
     const pointLight = new THREE.PointLight(0xffffff, 1)
     scene.add(pointLight)
+    // const helper_point = new THREE.PointLightHelper(pointLight);
+    // scene.add(helper_point)
     pointLight.position.set(2,3,3)
 
     /**
