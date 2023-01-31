@@ -40,3 +40,9 @@ body{
   font-family: helvetica, Inter;
   font-weight: lighter;
 }
+
+.stroke{
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: white;
+}
