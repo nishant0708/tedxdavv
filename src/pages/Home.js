@@ -91,10 +91,10 @@ function Home(){
     /**
     * Lights
     // */
-    // const ambientLight = new THREE.AmbientLight(0xffffff, 1)
-    // scene.add(ambientLight)
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1)
+    scene.add(ambientLight)
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
+    // const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
     // directionalLight.castShadow = true
     // directionalLight.shadow.mapSize.set(1024, 1024)
     // directionalLight.shadow.camera.far = 15
@@ -102,17 +102,43 @@ function Home(){
     // directionalLight.shadow.camera.top = 7
     // directionalLight.shadow.camera.right = 7
     // directionalLight.shadow.camera.bottom = - 7
-    directionalLight.position.set(2, 2, 2)
-    scene.add(directionalLight)
+    // directionalLight.position.set(2, 2, 2)
+    // scene.add(directionalLight)
 
-    const helper_directional = new THREE.DirectionalLightHelper( directionalLight );
-    scene.add( helper_directional );
+    // const helper_directional = new THREE.DirectionalLightHelper( directionalLight );
+    // scene.add( helper_directional );
 
-    const pointLight = new THREE.PointLight(0xffffff, 1)
-    scene.add(pointLight)
-    const helper_point = new THREE.PointLightHelper(pointLight);
-    scene.add(helper_point)
-    pointLight.position.set(2,3,3)
+    // const pointLight = new THREE.PointLight(0xffffff, 1)
+    // scene.add(pointLight)
+    // const helper_point = new THREE.PointLightHelper(pointLight);
+    // scene.add(helper_point)
+    // pointLight.position.set(2,3,3)
+
+    const spotlight = new THREE.SpotLight(0xffffff,1);
+    spotlight.position.set(0,0,3)
+    scene.add(spotlight)
+    const spothelper = new THREE.SpotLightHelper(spotlight)
+    scene.add(spothelper)
+
+    const spotlight2 = new THREE.SpotLight(0xffffff,1);
+    spotlight2.position.set(3,0,0)
+    scene.add(spotlight2)
+    const spothelper2 = new THREE.SpotLightHelper(spotlight2)
+    scene.add(spothelper2)
+
+    const spotlight3 = new THREE.SpotLight(0xffffff,1);
+    spotlight3.position.set(-3,0,0)
+    scene.add(spotlight3)
+    const spothelper3 = new THREE.SpotLightHelper(spotlight3)
+    scene.add(spothelper3)
+
+    var hemiLight = new THREE.HemisphereLight( 0xffffff, 0x444444 );
+    hemiLight.position.set( 0, 300, 0 );
+    scene.add( hemiLight );
+
+    var dirLight = new THREE.DirectionalLight( 0xffffff );
+    dirLight.position.set( 75, 300, -75 );
+    scene.add( dirLight );
 
     /**
      * Renderer
