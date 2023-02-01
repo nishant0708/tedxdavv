@@ -23,9 +23,9 @@ function Home(){
     // glTF loader
     const gltfLoader = new GLTFLoader()
     gltfLoader.setDRACOLoader(dracoLoader)
-// node_modules\three\examples\jsm\libs\draco
-// E:\flic\tedxdavv\node_modules\three\examples\jsm\libs\draco
-// /examples/jsm/libs/draco/
+    // node_modules\three\examples\jsm\libs\draco
+    // E:\flic\tedxdavv\node_modules\three\examples\jsm\libs\draco
+    // /examples/jsm/libs/draco/
     let mixer = null
     gltfLoader.load(
       'model/landing_page_3d.gltf',
@@ -110,8 +110,8 @@ function Home(){
 
     const pointLight = new THREE.PointLight(0xffffff, 1)
     scene.add(pointLight)
-    // const helper_point = new THREE.PointLightHelper(pointLight);
-    // scene.add(helper_point)
+    const helper_point = new THREE.PointLightHelper(pointLight);
+    scene.add(helper_point)
     pointLight.position.set(2,3,3)
 
     /**
