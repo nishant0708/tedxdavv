@@ -8,7 +8,7 @@ function Loader() {
   const [numH, setWindowHeight] = useState(parseInt(window.innerHeight/side) +1)
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const home = useRef();
+  const loader = useRef();
   const tl = useRef();
 
   // Animation
@@ -16,14 +16,15 @@ function Loader() {
     tl.current && tl.current.progress(0).kill();
     const ctx = gsap.context(() => {
     tl.current = gsap.timeline()
-      .from(".square", { opacity: "0", duration: 2,   yoyo:true})
-      .to(".square", { rotation: "540", duration: 2,  ease: Back.easeInOut.config(2), yoyo:true})
-      .from(".circle", { opacity: 0, duration: 2, stagger:0.1,  ease: "easeInOut", }, "-=2.5")
-      .from(".flic-text", { opacity:0, duration: 3, stagger:1, ease: "easeInOut", }, "-=0.5")
-      .to(".flic-text", { opacity:0, duration: 1, stagger:0.1, ease: "easeInOut", }, "-=0.5")
-      .to(".square", { scale: "15", duration: 2,  ease: Back.easeInOut.config(1), onComplete:()=>{setIsLoaded(true)}}, "-=1")
+      // .from(".square", { opacity: "0", duration: 2,   yoyo:true})
+      // .to(".square", { rotation: "540", duration: 2,  ease: Back.easeInOut.config(2), yoyo:true})
+      // .from(".circle", { opacity: 0, duration: 2, stagger:0.1,  ease: "easeInOut", }, "-=2.5")
+      .from(".flic-text", { opacity:0, duration: 1.5, stagger:0.8, ease: "easeInOut", }, "-=2")
+      .to(".flic-text", { opacity:0, duration: 0.5, stagger:0.1, ease: "easeInOut", }, "-=0.5")
+      .to(".square", { scale: "15", duration: 2,  ease: Back.easeInOut.config(1) }, "-=1")
+      .to(".square", { backgroundColor: "black", duration: 2,  ease: "easeIn", onComplete:()=>{setIsLoaded(true)}}, "-=1")
       // .from(".tedxdavv", { opacity:0, duration: 2, ease: "easeInOut", yoyo:true})
-    }, home);
+    }, loader);
 
     // cleanup
     return () => ctx.revert();
@@ -45,7 +46,7 @@ function Loader() {
   return (
 
 
-    <div ref={home} className="Home">
+    <div ref={loader}>
       { true
         ? <Home/>
 
@@ -62,7 +63,7 @@ function Loader() {
                             const isSquare = (i===parseInt(numH/2) && j===parseInt(numW/2));
                             return(
                               <td  className="p-5 " key={i + j + 200}>
-                                <div className={"z-10 h-full w-full " + (isSquare ? "square rounded-lg bg-red-950 ":"border-white border-4 rounded-full circle")}></div>
+                                <div className={"z-10 h-full w-full " + (isSquare ? "square rounded-lg bg-red-950 border-xl ":"border-white border-4 rounded-full circle")}></div>
                               </td>
                             );
                           })
