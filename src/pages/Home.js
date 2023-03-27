@@ -183,10 +183,10 @@ function Home(){
       </div>
 
       <div className="lazy bg-transparent z-10">
-        <span className="bg-transparent z-10 text-white font-serif text-[5vh] font-extrabold max-md:text-[3vh]">
+        {/* <span className="bg-transparent z-10 text-white font-serif text-[5vh] font-extrabold max-md:text-[3vh]">
           <span className=" bg-transparent z-10 font-extralight">Theme: </span>
           <span className=" bg-transparent z-10" >EVOLVE</span>
-        </span>
+        </span> */}
       </div>
 
       <div className="lazy bg-transparent z-10">

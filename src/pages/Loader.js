@@ -16,14 +16,14 @@ function Loader() {
     tl.current && tl.current.progress(0).kill();
     const ctx = gsap.context(() => {
     tl.current = gsap.timeline()
-      // .from(".square", { opacity: "0", duration: 2,   yoyo:true})
-      // .to(".square", { rotation: "540", duration: 2,  ease: Back.easeInOut.config(2), yoyo:true})
-      // .from(".circle", { opacity: 0, duration: 2, stagger:0.1,  ease: "easeInOut", }, "-=2.5")
+      .from(".square", { opacity: "0", duration: 2,   yoyo:true})
+      .to(".square", { rotation: "540", duration: 2,  ease: Back.easeInOut.config(2), yoyo:true})
+      .from(".circle", { opacity: 0, duration: 2, stagger:0.1,  ease: "easeInOut", }, "-=2.5")
       .from(".flic-text", { opacity:0, duration: 1.5, stagger:0.8, ease: "easeInOut", }, "-=2")
       .to(".flic-text", { opacity:0, duration: 0.5, stagger:0.1, ease: "easeInOut", }, "-=0.5")
       .to(".square", { scale: "15", duration: 2,  ease: Back.easeInOut.config(1) }, "-=1")
       .to(".square", { backgroundColor: "black", duration: 2,  ease: "easeIn", onComplete:()=>{setIsLoaded(true)}}, "-=1")
-      // .from(".tedxdavv", { opacity:0, duration: 2, ease: "easeInOut", yoyo:true})
+      .from(".tedxdavv", { opacity:0, duration: 2, ease: "easeInOut", yoyo:true})
     }, loader);
 
     // cleanup
@@ -47,7 +47,7 @@ function Loader() {
 
 
     <div ref={loader}>
-      { true
+      { isLoaded
         ? <Home/>
 
         : <div>
@@ -79,8 +79,8 @@ function Loader() {
             <div className="bg-transparent fixed p-4 bottom-[10px] right-[10px] text-right text-white text-3xl font-inter-bold">
               <p className="flic-text bg-transparent">BE <span className='bg-transparent text-red-950'>THE RED</span></p>
               <p className="flic-text bg-transparent">BE <span className='bg-transparent text-red-950'>UNIQUE</span></p>
-              {/* <p className="flic-text bg-transparent">BE <span className='bg-transparent text-red-950'>BOLD</span></p> */}
-              {/* <p className="flic-text bg-transparent">BE <span className='bg-transparent text-red-950'>INDEPENDENT</span></p> */}
+              <p className="flic-text bg-transparent">BE <span className='bg-transparent text-red-950'>BOLD</span></p> 
+              <p className="flic-text bg-transparent">BE <span className='bg-transparent text-red-950'>INDEPENDENT</span></p>
               <p className="flic-text bg-transparent">BE <span className='bg-transparent text-red-950'>FLiC</span></p>
             </div>
           </div>
