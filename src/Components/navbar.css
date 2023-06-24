@@ -1,0 +1,139 @@
+.app__navbar{
+    background: transparent;
+    position: absolute;
+    z-index: 11;
+    width: 100%;
+    display: flex;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+.app__navbar-links{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: center;
+}
+.tedxlogo{
+  width: 13%;
+}
+.app__navbar-links li {
+    list-style-type: none;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+    line-height: 20px;
+    padding: 0.5rem 1rem;
+}
+
+
+.app__navbar-links li:hover {
+    color:#c10c0c;
+    transition: color 0.3s ease;
+}
+
+.app__navbar-sm , .logotext {
+    display: none;
+}
+.logotext{
+  justify-content: flex-start;
+  padding: 8rem;
+}
+.hamburger{
+    /* font-size: 27px; */
+    color: white !important;
+    cursor: pointer;
+    position: fixed;
+    background-color: transparent;
+    top: 30px;
+    right: -8rem;
+    z-index:1;
+    /* justify-content: flex-end; */
+}
+.app__navbar-sm-overlay{
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #0c0c0cfc;
+    color: white;
+    flex-direction: column;
+    transition: 0.5 ease;
+    
+}
+.app__navbar-smlinks {
+  list-style-type: none;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  line-height: 20px;
+}
+.app__navbar-smlinks li{
+    padding: 1rem;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+}
+.app__navbar-smlinks li:hover{
+    color: #c10c0c;
+}
+@media screen and (max-width: 750px) {
+    .app__navbar-links{
+        display: none;
+    }
+    .logotext{
+      display: block;
+      /* padding: 3rem ; */
+    }
+    .app__navbar-sm{
+        display: flex;
+    }
+    .tedxlogo{
+      width: 40%;
+    }
+}
+.slide-bottom {
+    -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  
+  @-webkit-keyframes slide-bottom {
+    0% {
+      -webkit-transform: translateY(-25%);
+              transform: translateY(-25%);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
+  
+  @keyframes slide-bottom {
+    0% {
+      -webkit-transform: translateY(-25%);
+              transform: translateY(-25%);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
+  
+  .slide-up {
+    -webkit-animation: slide-up 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      animation: slide-up 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  
+  @keyframes slide-up {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-25%);
+              transform: translateY(-25%);
+    }
+  }

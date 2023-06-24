@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+.speakercard{
+    border-radius: 15px;
+    padding: 1rem;
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    box-shadow: -3px -4px 52px 0px rgb(21, 21, 21);
+}
+.speakerbg{
+    background-image: url('../../public/images/X.png');
+    border-radius: 15px;
+    background-size: contain;
+    border: 3px solid red;
+}
+.speakerdetails{
+    /* padding: 1.5rem 0; */
+    padding-bottom: 1rem;
+}
+.speakername{
+    /* padding: 0.5rem 0; */
+    font-family: 'Caveat Brush', cursive;
+    font-size: 2.5rem;
+    transform: rotate(-5deg);
+    margin-top: -0.4rem;
+    cursor:default
+}
+.speakername:hover{
+    color: #E62B1E;
+}
+.speakertitle{
+    padding-top: 0.5rem;
+}
+@media screen and (max-width:1150px) {
+    .speakername{
+        /* padding: 0.5rem 0; */
+        font-family: 'Caveat Brush', cursive;
+        font-size: 2.2rem;
+        transform: rotate(-5deg);
+        margin-top: -0.2rem;
+    }
+}
+@media screen and (max-width:650px) {
+    .speakername{
+        /* padding: 0.5rem 0; */
+        font-family: 'Caveat Brush', cursive;
+        font-size: 2rem;
+        transform: rotate(-5deg);
+        margin-top: 0rem;
+    }
+}

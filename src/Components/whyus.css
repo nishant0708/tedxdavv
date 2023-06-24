@@ -1,0 +1,60 @@
+
+
+.whyus{
+  /* height: auto; */
+    /* min-height: 100vh; */
+    /* margin-top: 80vh; */
+    padding-bottom: 2rem ;
+    background-image: url('../../public/images/whyusbg.png');
+    background-position: center;
+  background-size: cover;
+  padding: 1.5rem 0;
+    /* background-image: url('https://i.imgur.com/15kLXCo.jpg'); */
+}
+.whyuspoints{
+    text-align: left;
+    font-size: 1.5rem;
+    padding-left: 5rem;
+    object-fit: contain;
+}
+.whyuspoints li{
+    padding: 1rem 0 1rem 0;
+    list-style-type:disc;
+}
+.partner{
+    width: 30vw;
+    aspect-ratio: 2/2;
+    /* position: relative; */
+    top: -5vh;
+    left: 20%;
+    transform: translate(50%);
+}
+.heading{
+  padding: 1rem;
+    padding-left: 5rem;
+    padding-top: 3rem;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 2rem;
+    letter-spacing: 3px;
+    /* text-align: center; */
+}
+@media screen and (max-width: 800px) {
+    .heading{
+        font-size: 2rem;
+        padding: 1rem;
+    padding-left: 2.5rem;
+    padding-top: 2rem;
+    }
+    .whyuspoints{
+        font-size: 0.8rem;
+        padding-left: 3rem;
+    }
+    .whyuspoints li{
+      padding: 0.7rem 0;
+    }
+    .partner{
+        width: 50vw;
+    }
+  
+}

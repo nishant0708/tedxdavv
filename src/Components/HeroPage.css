@@ -1,0 +1,173 @@
+.app__hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url('../../public/images/bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.app__hero-logo {
+    position: absolute;
+    /* left: 20%; */
+    top: 10vh;
+    /* width: 25%; */
+    align-items: center;
+    width: 100%;
+}
+
+.tedxdraw {
+    width: 10vw;
+}
+
+.davvdraw {
+    width: 10vw;
+}
+
+.ballon {
+    position: relative;
+    /* height: 50%; */
+    top: 10vh;
+    left: 10%;
+    width: 70%;
+}
+
+.balloncloud {
+    position: absolute;
+    top: 20vh;
+    width: 20%;
+    left: 20vh;
+}
+
+.evolvelogo {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 50%;
+}
+
+.cloud {
+    position: absolute;
+    bottom: -7%;
+    z-index: 10;
+}
+
+.planet {
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    width: 10%;
+}
+
+.com-building {
+    position: absolute;
+    bottom: -20%;
+    width: 50%;
+    height: 60%;
+    right: 0;
+}
+
+.a-block {
+    position: absolute;
+    bottom: -0.1%;
+    width: 50vh;
+    right: 0;
+}
+
+.Rnth {
+    position: absolute;
+    left: -25%;
+    bottom: -20%;
+    width: 100vw;
+    z-index: 10;
+    /* aspect-ratio: 2/1; */
+    /* height: 25%; */
+}
+
+.admiin-building {
+    left: 0%;
+    position: absolute;
+    width: 20%;
+}
+
+@media screen and (max-width: 1150px) {
+    .app__hero-logo {
+        position: absolute;
+        top: 15vh;
+        width: 100%;
+    }
+
+    .tedxdraw {
+        width: 32vw;
+    }
+
+    .davvdraw {
+        width: 32vw;
+    }
+
+    .ballon {
+        top: 20vh;
+        left: 13%;
+        height: 25%;
+        width: 100%;
+    }
+
+    .balloncloud {
+        top: 25vh;
+        width: 40%;
+        left: 2%;
+    }
+
+    .evolvelogo {
+        top: 37%;
+        width: 100%;
+        left: 0;
+    }
+
+    .cloud {
+        bottom: 0;
+        /* bottom: -0.1%; */
+    }
+    .planet{
+        width: 20%;
+        top: 25vh;
+    }
+    .com-building {
+        bottom: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .a-block {
+        bottom: -0.1%;
+        width: 30vh;
+        right: 0;
+    }
+
+    .Rnth {
+        position: absolute;
+        left: -25%;
+        bottom: -2%;
+        width: 100%;
+        /* width: 10vw; */
+        aspect-ratio: 2/1;
+        height: 25%;
+    }
+
+    .admiin-building {
+        display: none;
+    }
+}
+@media screen and (max-width: 650px){
+.Rnth{
+    left: -23%;
+    z-index: 5;
+    width: 200vw;
+}
+.a-block{
+    z-index: 6;
+}
+}

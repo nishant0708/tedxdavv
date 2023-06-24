@@ -1,0 +1,29 @@
+.app__heading{
+    display: flex;
+    align-items:flex-start;
+    justify-content: right;
+    padding: 1rem;
+}
+.title{
+    text-transform:uppercase;
+    letter-spacing: 0;
+    font-weight: bold;
+    font-size: 3rem;
+}
+.subtext{
+    text-transform:uppercase;
+    padding: 1rem 0.5rem;
+}
+@media screen and (max-width:1150px) {
+    .app__heading{
+        padding: 0.5rem;
+        align-items:flex-start;
+    }
+    .title{
+        font-size: 2rem;
+    }
+    .subtext{
+        font-size: 0.8rem;
+        padding: 0.5rem 0.5rem;
+    }
+}
