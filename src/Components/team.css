@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
+.app__team{
+    background-image: url('../../public/images/bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    padding: 2vw 5vw;
+}
+.headtext{
+    font-size: 18pt;
+    text-transform: uppercase;
+    /* font-family: 'Caveat Brush', cursive; */
+}
+.team-divisions{
+    padding: 2vw 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 0;
+    gap: 1vw;
+}
+.team-scroll {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .team-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .team-scroll > * {
+    flex: 0 0 auto;
+    margin-right: 10px; /* Add some spacing between TeamCard components */
+  }
+  
+  .team-scroll > *:last-child {
+    margin-right: 0;
+  }
+  
+@media screen and (max-width: 1150px) {
+    .headtext{
+        font-size: 15pt;
+    }
+    .app__team{
+        padding: 4vw 5vw;
+    }
+    .team-divisions{
+        margin-bottom: 3vw;
+    }
+}
+@media screen and (max-width: 650px) {
+    .headtext{
+        font-size: 9pt;
+    }
+}

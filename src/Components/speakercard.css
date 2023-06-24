@@ -1,13 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
 .speakercard{
     border-radius: 15px;
-    padding: 1rem;
+    /* height: 70vh; */
     background-color: #1e1e1e;
-    padding: 1.5rem;
+    padding: 3vw 2vw;
+    flex-basis: 28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   /* padding: 1vw; */
     box-shadow: -3px -4px 52px 0px rgb(21, 21, 21);
 }
 .speakerbg{
-    background-image: url('../../public/images/X.png');
+    /* padding: 2vw; */
+    /* background-image: url('../../public/images/X.png'); */
+    border-radius: 15px;
+    background-size: contain;
+    /* border: 3px solid red; */
+    object-fit: contain;
+}
+.speakerbg img{
+    object-fit: contain;
     border-radius: 15px;
     background-size: contain;
     border: 3px solid red;
@@ -15,6 +29,7 @@
 .speakerdetails{
     /* padding: 1.5rem 0; */
     padding-bottom: 1rem;
+    align-self: flex-start;
 }
 .speakername{
     /* padding: 0.5rem 0; */
@@ -29,6 +44,7 @@
 }
 .speakertitle{
     padding-top: 0.5rem;
+    word-wrap: break-word;
 }
 @media screen and (max-width:1150px) {
     .speakername{
@@ -36,9 +52,17 @@
         font-family: 'Caveat Brush', cursive;
         font-size: 2.2rem;
         transform: rotate(-5deg);
-        margin-top: -0.2rem;
+        margin-top: -0.2vw;
+    }
+    .speakercard{
+        flex-basis: 45%;
+        height: auto;
+    }
+    .speakerbg{
+        padding: 0;
     }
 }
+
 @media screen and (max-width:650px) {
     .speakername{
         /* padding: 0.5rem 0; */
@@ -46,5 +70,9 @@
         font-size: 2rem;
         transform: rotate(-5deg);
         margin-top: 0rem;
+    }
+    .speakercard{
+        flex-basis: 90%;
+        padding: 5vw;
     }
 }

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useState, useEffect } from "react";
 import { Routes, Route } from 'react-router-dom'
@@ -10,6 +9,7 @@ import Footer from "./Components/Footer";
 import Whyus from "./Components/Whyus";
 import Navbar from "./Components/Navbar";
 import Speaker from "./Components/Speaker";
+import Team from './Components/Team';
 
 function App() {
 
@@ -59,6 +59,8 @@ const HomePage = () => {
         <>
       <HeroPage />
       <Speaker />
+      {/* Gallery Component is to be here */}
+      <Team />
       <Whyus />
       </>
       }

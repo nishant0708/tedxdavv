@@ -53,6 +53,7 @@
     position: absolute;
     bottom: -7%;
     z-index: 10;
+    left: 0;
 }
 
 .planet {
@@ -136,7 +137,7 @@
         top: 25vh;
     }
     .com-building {
-        bottom: 0;
+        bottom: -30%;
         width: 100%;
         height: auto;
     }

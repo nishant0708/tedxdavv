@@ -1,0 +1,73 @@
+.hovered-image {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 100%;
+    border: 1.5px solid black;
+  }
+  .teamcard{
+    border: 3px solid #e62b1e;
+    border-radius: 100%;
+  }
+  .image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#e62b1e68 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .hovered-image:hover .details {
+    opacity: 1;
+  }
+  
+  .name {
+    color: #fff;
+    font-size: 1.2vw;
+    margin-bottom: 0.5rem;
+    cursor: default;
+  }
+  
+  .additional-details {
+    color: #fff;
+    font-size: 1rem;
+  }
+  @media screen and (max-width:1150px) {
+    .hovered-image {
+        width: 150px;
+        height: 150px;
+      }
+      .name {
+        font-size: 1rem;
+      }
+}
+
+@media screen and (max-width:650px) {
+    .hovered-image {
+        width: 80px;
+        height: 80px;
+      }
+      .teamcard{
+        border: 1.5px solid #e62b1e;
+        border-radius: 100%;
+      }
+      .name {
+        font-size: 8pt;
+      }
+}
