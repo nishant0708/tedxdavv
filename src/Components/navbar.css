@@ -17,6 +17,7 @@
 }
 .tedxlogo{
   width: 13%;
+  padding: 0;
 }
 .app__navbar-links li {
     list-style-type: none;
@@ -79,6 +80,14 @@
 }
 .app__navbar-smlinks li:hover{
     color: #c10c0c;
+}
+@media screen and (max-width: 1150px) {
+  .app__navbar{
+    padding: 1rem 1rem;
+  }
+  .tedxlogo{
+    width: 20%;
+  }
 }
 @media screen and (max-width: 750px) {
     .app__navbar-links{

@@ -21,10 +21,23 @@
         align-items:flex-start;
     }
     .title{
-        font-size: 10vw;
+        font-size: 55pt;
     }
     .subtext{
-        font-size: 3.5vw;
+        font-size: 20pt;
+        padding: 3vw 1.5vw;
+    }
+}
+@media screen and (max-width:650px) {
+    .app__heading{
+        padding: 0.5vw;
+        align-items:flex-start;
+    }
+    .title{
+        font-size: 30pt;
+    }
+    .subtext{
+        font-size: 10pt;
         padding: 3vw 1.5vw;
     }
 }

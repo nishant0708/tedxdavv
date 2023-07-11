@@ -11,6 +11,7 @@
 .headtext{
     font-size: 18pt;
     text-transform: uppercase;
+    padding: 10px 0;
     /* font-family: 'Caveat Brush', cursive; */
 }
 .team-divisions{
@@ -19,22 +20,35 @@
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 0;
-    gap: 1vw;
+    gap: 2vw;
 }
 .team-scroll {
     display: flex;
     overflow-x: scroll;
     scroll-behavior: smooth;
+    /* padding: 1rem; */
     -webkit-overflow-scrolling: touch;
   }
   
-  .team-scroll::-webkit-scrollbar {
+  /* .team-scroll::-webkit-scrollbar {
     display: none;
+  } */
+  .team-scroll::-webkit-scrollbar-thumb {
+    border-radius: 7px;
+    padding: 1rem;
+  }
+  .team-scroll:hover::-webkit-scrollbar-thumb {
+    background-color: #E62B1E;
+  }
+  .team-scroll::-webkit-scrollbar {
+    width: 15px;
+    height: 10px;
+    padding: 1rem;
   }
   
   .team-scroll > * {
     flex: 0 0 auto;
-    margin-right: 10px; /* Add some spacing between TeamCard components */
+    margin-right: 10px;
   }
   
   .team-scroll > *:last-child {
@@ -51,6 +65,9 @@
     .team-divisions{
         margin-bottom: 3vw;
     }
+    .team-scroll::-webkit-scrollbar {
+        display: none;
+      }
 }
 @media screen and (max-width: 650px) {
     .headtext{

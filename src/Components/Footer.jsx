@@ -33,7 +33,7 @@ export default function Footer() {
 
           </div>
           <div className='footerlinks'>
-            <h4 className='button blacktext'> <Link to='/aboutus' >PARTNER WITH US</Link> </h4>
+            <h4 className='button blacktext'> <Link to='/about' >PARTNER WITH US</Link> </h4>
           </div>
           <div className='footerlinks'>
             <p>

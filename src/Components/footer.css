@@ -119,10 +119,11 @@
     }
     .mailus .button{
         margin-top: 1rem;
-        line-height: 2rem;
+        line-height: 1.5rem;
     }
     .mailus input{
-        width: 60vw;
+        width: 51vw;
+        height: 5vh;
     }
     .socialmedia{
         width: 60vw;

@@ -54,6 +54,7 @@
     bottom: -7%;
     z-index: 10;
     left: 0;
+    width: 80%;
 }
 
 .planet {
@@ -112,7 +113,7 @@
     .ballon {
         top: 20vh;
         left: 13%;
-        height: 25%;
+        height: 35%;
         width: 100%;
     }
 
@@ -140,6 +141,7 @@
         bottom: -30%;
         width: 100%;
         height: auto;
+        max-height: 70vh;
     }
 
     .a-block {
@@ -164,11 +166,16 @@
 }
 @media screen and (max-width: 650px){
 .Rnth{
-    left: -23%;
+    left: -20%;
     z-index: 5;
-    width: 200vw;
+    bottom: -5%;
+    width: 500px;
 }
 .a-block{
     z-index: 6;
+}
+.cloud{
+    width: 100vw;
+    height: 40%;
 }
 }
