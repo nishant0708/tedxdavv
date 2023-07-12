@@ -10,6 +10,8 @@ import Whyus from "./Components/Whyus";
 import Navbar from "./Components/Navbar";
 import Speaker from "./Components/Speaker";
 import Team from './Components/Team';
+import HeroNew from './Components/HeroNew';
+import Sponsor from './Components/sponsor';
 
 function App() {
 
@@ -38,7 +40,7 @@ function App() {
           <Loader /> //works if loader is true else neeche wala
           :
           <>
-            <Navbar />
+            {/* <Navbar /> */}
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<About />} />
@@ -57,11 +59,13 @@ const HomePage = () => {
     <div>
       {isHomePage &&
         <>
-      <HeroPage />
+      {/* <HeroPage /> */}
+      <HeroNew/>
       <Speaker />
       {/* Gallery Component is to be here */}
       <Team />
       <Whyus />
+      <Sponsor/>
       </>
       }
     </div >
