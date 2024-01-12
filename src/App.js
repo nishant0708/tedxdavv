@@ -1,9 +1,11 @@
-import Loader from './pages/Loader'
+
+import './App.css';
+import Mainpage from './component/Mainpage';
 
 function App() {
   return (
-    <div className='App'>
-      <Loader/>
+    <div className="App">
+      <Mainpage/>
     </div>
   );
 }
