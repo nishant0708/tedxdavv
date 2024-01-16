@@ -19,23 +19,7 @@ const Mainpage = () => {
     <div>
     <div className="scrollDist"></div>
     <div className="main">
-      <svg className="svgcls" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-        <mask id="m">
-          <g className="cloud1">
-            <rect fill="#fff" width="100%" height="801" y="799" />
-            <image xlinkHref="https://assets.codepen.io/721952/cloud1Mask.jpg" width="1200" height="800"/>
-          </g>
-        </mask>
-        <image className="sky" xlinkHref="https://assets.codepen.io/721952/sky.jpg" width="1200" height="590" />
-        
-        <text className="theme" fill="#fff" x="425" y="300" fontSize={"100px"}>THEME</text>
-          
-        <g mask="url(#m)">
-          <rect fill="#fff" width="100%" height="100%" />      
-          <text x="350" y="300" fill="#FF0000">TEDx</text>
-          <text className="D" x="630" y="300" fill="#000000">DAVV</text>      
-        </g>
-      </svg>
+        {/* to be added */}
     </div>
     </div>
   );
