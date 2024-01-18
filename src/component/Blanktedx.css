@@ -1,0 +1,7 @@
+
+.tedximage {
+    width: 100vw;
+    /* top: -100px; */
+    /* position: fixed; */
+    z-index: -1;
+}
