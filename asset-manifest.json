@@ -1,15 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.d11dd924.css",
-    "main.js": "/static/js/main.05b23338.js",
-    "static/media/Inter-Bold.ttf": "/static/media/Inter-Bold.88fa7ae373b07b41ecce.ttf",
-    "static/media/Inter-Light.ttf": "/static/media/Inter-Light.eec8664621fec98efb37.ttf",
+    "main.css": "/static/css/main.9e4c1315.css",
+    "main.js": "/static/js/main.9d0c11c8.js",
+    "static/js/453.328bc098.chunk.js": "/static/js/453.328bc098.chunk.js",
+    "static/media/whiteflower.png": "/static/media/whiteflower.a686f0651972ccd1e799.png",
+    "static/media/redflower.png": "/static/media/redflower.0c0161a239fdbf67f1c1.png",
+    "static/media/lines(traced).png": "/static/media/lines(traced).bf7a42e48f72253c401e.png",
+    "static/media/rev.png": "/static/media/rev.6aa294b49a06a3830aaa.png",
+    "static/media/ZakirKhan_3x1_WhatsOn.jpg-transformed.webp": "/static/media/ZakirKhan_3x1_WhatsOn.jpg-transformed.ecae78c7b50a3eed95ec.webp",
+    "static/media/instagram (2).png": "/static/media/instagram (2).9d430dc9c220024926a6.png",
+    "static/media/logo-black 1.png": "/static/media/logo-black 1.ed90ce3ef144f4ba7f6c.png",
+    "static/media/Group 29.png": "/static/media/Group 29.028d8b84b5c1b88a1a22.png",
+    "static/media/linkedin.png": "/static/media/linkedin.7e5393966a5242bd81b0.png",
     "index.html": "/index.html",
-    "main.d11dd924.css.map": "/static/css/main.d11dd924.css.map",
-    "main.05b23338.js.map": "/static/js/main.05b23338.js.map"
+    "main.9e4c1315.css.map": "/static/css/main.9e4c1315.css.map",
+    "main.9d0c11c8.js.map": "/static/js/main.9d0c11c8.js.map",
+    "453.328bc098.chunk.js.map": "/static/js/453.328bc098.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d11dd924.css",
-    "static/js/main.05b23338.js"
+    "static/css/main.9e4c1315.css",
+    "static/js/main.9d0c11c8.js"
   ]
 }
