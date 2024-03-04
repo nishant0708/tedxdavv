@@ -181,10 +181,10 @@
                 "ln":""
             }
         ],
-        "Sponsorship Team": [
+        "Art Team": [
             {
-                "id": "Sponsors-Team",
-                "name": "Sahil ",
+                "id": "Art-Team",
+                "name": "Meenakshi ",
                 "info": "TEDxDAVV",
                 "image": "https://imgur.com/jHgMyFI.jpeg",
                 "ig": "https://www.instagram.com/sahil_lalwani._/",
@@ -195,8 +195,8 @@
                 "fun": 76,
                 "ln":""
             },{
-                "id": "Sponsors-Team",
-                "name": "Shreya ",
+                "id": "Art-Team",
+                "name": "Surbhi ",
                 "info": "TEDxDAVV",
                 "image": "https://imgur.com/Y2YY9YB.jpeg",
                 "ig": "https://www.instagram.com/_shreya_maheshwari07/",
@@ -208,8 +208,8 @@
                 "ln":""
             },
             {
-                "id": "Sponsors-Team",
-                "name": "Akshat ",
+                "id": "Art-Team",
+                "name": "Anushka ",
                 "info": "TEDxDAVV",
                 "image": "https://imgur.com/tGwFMQo.jpeg",
                 "ig": "",
@@ -232,8 +232,8 @@
                 "fun": 46,
                 "ln":""
             },{
-                "id": "Sponsors-Team",
-                "name": "Attar ",
+                "id": "Art-Team",
+                "name": "Saharsh ",
                 "info": "TEDxDAVV",
                 "image": "https://imgur.com/hz5w6eD.jpeg",
                 "ig": "https://www.instagram.com/mohammedattar_15253/",
@@ -285,8 +285,7 @@
                 "ln":""
             }
         ],
-        "Event Management": [
-            
+        "Sponsors Team": [
             {
                 "id": "Management-Team",
                 "name": "Jay ",
@@ -435,8 +434,8 @@
                 "image": "https://imgur.com/IichnZZ.jpeg",
                 "ig": "https://www.instagram.com/jaizistic/",
                 "cuteness":5,
-                "IQ":60,
-                "humour":70,
+                "IQ":30,
+                "humour":20,
                 "anger":50,
                 "fun": 96,
                 "ln":""
@@ -447,7 +446,7 @@
                 "image": "https://imgur.com/IRR99gs.jpeg",
                 "ig": "https://www.instagram.com/s_j_a_l_g_p_t_a/",
                 "cuteness":5,
-                "IQ":80,
+                "IQ":30,
                 "humour":20,
                 "anger":50,
                 "fun": 96,
@@ -527,7 +526,7 @@
                 "image": "https://imgur.com/XxrL7Yp.jpeg",
                 "ig": "https://www.instagram.com/renukakhatwani/",
                 "cuteness":5,
-                "IQ":80,
+                "IQ":30,
                 "humour":20,
                 "anger":50,
                 "fun": 86,
@@ -539,7 +538,7 @@
                 "image": "https://imgur.com/aa7wk5e.jpeg",
                 "ig": "https://www.instagram.com/velvety_vibe/",
                 "cuteness":5,
-                "IQ":90,
+                "IQ":30,
                 "humour":20,
                 "anger":50,
                 "fun": 66,
@@ -559,7 +558,8 @@
                 "ln":""
             }
         ],
-        "Art Team": [
+        "Event Management": [
+            
             {
                 "id": "Art-Team",
                 "name": "Meenakshi ",
@@ -591,8 +591,8 @@
                 "info": "TEDxDAVV",
                 "image": "https://imgur.com/Gy7rgaK.jpeg",
                 "ig": "",
-                "cuteness":85,
-                "IQ":10,
+                "cuteness":5,
+                "IQ":30,
                 "humour":20,
                 "anger":50,
                 "fun": 96,
