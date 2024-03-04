@@ -185,6 +185,8 @@
             {
                 "id": "Art-Team",
                 "name": "Meenakshi ",
+                "id": "Art-Team",
+                "name": "Meenakshi ",
                 "info": "TEDxDAVV",
                 "image": "https://imgur.com/jHgMyFI.jpeg",
                 "ig": "https://www.instagram.com/sahil_lalwani._/",
@@ -195,6 +197,8 @@
                 "fun": 76,
                 "ln":""
             },{
+                "id": "Art-Team",
+                "name": "Surbhi ",
                 "id": "Art-Team",
                 "name": "Surbhi ",
                 "info": "TEDxDAVV",
@@ -208,6 +212,8 @@
                 "ln":""
             },
             {
+                "id": "Art-Team",
+                "name": "Anushka ",
                 "id": "Art-Team",
                 "name": "Anushka ",
                 "info": "TEDxDAVV",
@@ -232,6 +238,8 @@
                 "fun": 46,
                 "ln":""
             },{
+                "id": "Art-Team",
+                "name": "Saharsh ",
                 "id": "Art-Team",
                 "name": "Saharsh ",
                 "info": "TEDxDAVV",
@@ -285,6 +293,7 @@
                 "ln":""
             }
         ],
+        "Sponsors Team": [
         "Sponsors Team": [
             {
                 "id": "Management-Team",
@@ -436,6 +445,8 @@
                 "cuteness":5,
                 "IQ":30,
                 "humour":20,
+                "IQ":30,
+                "humour":20,
                 "anger":50,
                 "fun": 96,
                 "ln":""
@@ -446,6 +457,7 @@
                 "image": "https://imgur.com/IRR99gs.jpeg",
                 "ig": "https://www.instagram.com/s_j_a_l_g_p_t_a/",
                 "cuteness":5,
+                "IQ":30,
                 "IQ":30,
                 "humour":20,
                 "anger":50,
@@ -527,6 +539,7 @@
                 "ig": "https://www.instagram.com/renukakhatwani/",
                 "cuteness":5,
                 "IQ":30,
+                "IQ":30,
                 "humour":20,
                 "anger":50,
                 "fun": 86,
@@ -538,6 +551,7 @@
                 "image": "https://imgur.com/aa7wk5e.jpeg",
                 "ig": "https://www.instagram.com/velvety_vibe/",
                 "cuteness":5,
+                "IQ":30,
                 "IQ":30,
                 "humour":20,
                 "anger":50,
@@ -558,6 +572,8 @@
                 "ln":""
             }
         ],
+        "Event Management": [
+            
         "Event Management": [
             
             {
@@ -591,6 +607,8 @@
                 "info": "TEDxDAVV",
                 "image": "https://imgur.com/Gy7rgaK.jpeg",
                 "ig": "",
+                "cuteness":5,
+                "IQ":30,
                 "cuteness":5,
                 "IQ":30,
                 "humour":20,
