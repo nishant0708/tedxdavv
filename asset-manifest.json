@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1ac759d8.css",
-    "main.js": "/static/js/main.cc9327ff.js",
+    "main.css": "/static/css/main.11fdeebd.css",
+    "main.js": "/static/js/main.c78b8970.js",
     "static/js/453.328bc098.chunk.js": "/static/js/453.328bc098.chunk.js",
     "static/media/whiteflower.png": "/static/media/whiteflower.a686f0651972ccd1e799.png",
     "static/media/redflower.png": "/static/media/redflower.0c0161a239fdbf67f1c1.png",
@@ -13,12 +13,12 @@
     "static/media/linkedin.png": "/static/media/linkedin.7e5393966a5242bd81b0.png",
     "index.html": "/index.html",
     "static/media/ticket-svgrepo-com.svg": "/static/media/ticket-svgrepo-com.12d87a024fb6fd401d11f0d30f26ef7b.svg",
-    "main.1ac759d8.css.map": "/static/css/main.1ac759d8.css.map",
-    "main.cc9327ff.js.map": "/static/js/main.cc9327ff.js.map",
+    "main.11fdeebd.css.map": "/static/css/main.11fdeebd.css.map",
+    "main.c78b8970.js.map": "/static/js/main.c78b8970.js.map",
     "453.328bc098.chunk.js.map": "/static/js/453.328bc098.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ac759d8.css",
-    "static/js/main.cc9327ff.js"
+    "static/css/main.11fdeebd.css",
+    "static/js/main.c78b8970.js"
   ]
 }
