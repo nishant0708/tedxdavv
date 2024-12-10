@@ -345,13 +345,13 @@ const SliderComponent = () => {
           <span className="log">
             {instagramLink && (
               <a href={instagramLink}>
-                <img style={{ width: "35px" }} src={instagram} alt="" />
+                <img /*style={{ width: "35px" }}*/ src={instagram} alt="" />
               </a>
             )}
             &nbsp;
             {linkedinLink && (
               <a href={linkedinLink}>
-                <img style={{ width: "35px" }} src={linkedin} alt="" />
+                <img /*style={{ width: "35px" }}*/ src={linkedin} alt="" />
               </a>
             )}
           </span>

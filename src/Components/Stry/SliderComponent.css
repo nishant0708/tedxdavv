@@ -235,6 +235,9 @@ button:focus {
   transform: translateY(15%);
   justify-content: right;
 }
+.log a img{
+    width: 35px;
+}
 .speaker_desg {
   position: absolute;
 
@@ -312,6 +315,9 @@ button:focus {
   .slider__desc {
     font-size: 14px;
   }
+  .log a img{
+    width: 25px;
+}
   .Ashupc .speaker_desg{
     top:21%;
   }
