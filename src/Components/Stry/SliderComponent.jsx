@@ -53,7 +53,7 @@ const SliderComponent = () => {
             snap: {
               velocity: 0.001,
             },
-            duration: 0.2,
+            duration: 0.4,
             ease: "power3",
             overwrite: true,
             onUpdate: () => {
@@ -69,7 +69,7 @@ const SliderComponent = () => {
 
               // Animate title
               gsap.set(title, {
-                skewX: `${proxy.velocity * 7}deg`,
+                skewX: `${proxy.velocity * 5}deg`,
                 x:
                   (-scrollPerc / 100) * (title.offsetWidth - window.innerWidth),
               });
@@ -406,7 +406,13 @@ const SliderComponent = () => {
 
   const handleChange = (event) => {
     setSelectedYear(event.target.value);
-    window.scrollTo({ top: sliderRef.current.offsetTop, behavior: "smooth" });
+    
+      const offsetTop = sliderRef.current.offsetTop - window.innerHeight * 0.7; // Offset by 10% of screen height
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    
   };
 
   // console.log("Selected Year:", selectedYear);
@@ -470,11 +476,14 @@ const getSpeakerNameClass = (name) => {
       return "sripc";
     case "Ananad":
       return "Ananadpc";
+    case "Abhishek ":
+      return "abhishek23"
     case "Saanand":
       return "Saanandpc";
     case "Rahul":
       return "Rahulpc";
-
+    case "Bhaskar":
+    return "Bhaskar";
     default:
       return "";
   }
