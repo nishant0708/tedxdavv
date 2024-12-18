@@ -2,8 +2,8 @@
    position: fixed;
     width: 100%;
     display: flex;
-    justify-content: space-around;
-    padding: 5px;
+    justify-content: space-between;
+    padding: 30px 100px;
     background-color: transparent;
     padding-top: 15px;
     align-items: center;
@@ -16,12 +16,12 @@
     width: 20px;
 }
 .tedx-logo{
-    width: 300px;
+    width: 100px;
 }
 
 .nav-logo p{
     color: #171717;
-    font-size: 38px;
+    font-size: 18px;
     font-weight: 600;
 }
 .nav-menu{
@@ -30,7 +30,7 @@
     list-style: none;
     gap: 50px;
     
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     
 }

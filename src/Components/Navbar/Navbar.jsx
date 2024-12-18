@@ -51,8 +51,8 @@ const Navbar = () => {
           setNavTextColor('#fff'); // Set text color to white for sponsors page
           setNavLogo(logowhite); // Set logo to the white logo for sponsors page
         } else {
-          setNavTextColor('#000'); // Set default text color
-          setNavLogo(logoblack); // Set default logo
+          setNavTextColor('#fff'); // Set default text color
+          setNavLogo(logowhite); // Set default logo
         }
       }
     }
