@@ -17,7 +17,7 @@ import Buy from './Components/Buynow/Buy';
 import Layout from './Components/Buynow/Layout';
 
 function App() {
-  const [showLoader, setShowLoader] = useState(true);
+  const [showLoader, setShowLoader] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const productsData = [
     { title: '', link: '', thumbnail: "https://imgur.com/otCQ1nD.png" },
@@ -55,7 +55,7 @@ function App() {
     const loadingTimeout = setTimeout(() => {
       setIsLoaded(true);
       setShowLoader(false);
-    }, 6000);
+    }, 6);
 
     // Check if content is loaded before the timeout
     window.onload = () => {
