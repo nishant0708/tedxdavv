@@ -414,11 +414,85 @@ const SliderComponent = () => {
       });
     
   };
+  useEffect(() => {
+    const options = {
+      threshold: 0.1 // Trigger when at least 10% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const badal = document.querySelector('.badal1');
+        const title = document.querySelector('.o-slider__title');
+        
+        if (entry.isIntersecting) {
+          // When slider enters viewport
+          gsap.to(badal, {
+            position: 'fixed',
+            duration: 0.5,
+            ease: "power2.inOut",
+            opacity: 1,
+            y: 0
+          });
+          
+          gsap.to(title, {
+            position: 'fixed',
+            duration: 0.5,
+            ease: "power2.inOut",
+            opacity: 1,
+            y: 0
+          });
+        } else {
+          // When slider exits viewport
+          gsap.to(badal, {
+            position: 'absolute',
+            duration: 0.5,
+            ease: "power2.inOut",
+            opacity: 0.8,
+            y: 20
+          });
+          
+          gsap.to(title, {
+            position: 'absolute',
+            duration: 0.5,
+            ease: "power2.inOut",
+            opacity: 0.8,
+            y: 20
+          });
+        }
+      });
+    }, options);
+
+    // Add initial styles
+    gsap.set('.badal1', {
+      opacity: 0.8,
+      y: 20,
+      position: 'absolute'
+    });
+    
+    gsap.set('.o-slider__title', {
+      opacity: 0.8,
+      y: 20,
+      position: 'absolute'
+    });
+
+    const slider = document.getElementById('slider');
+    if (slider) {
+      observer.observe(slider);
+    }
+
+    // Cleanup
+    return () => {
+      if (slider) {
+        observer.unobserve(slider);
+      }
+    };
+  }, []);
 
   // console.log("Selected Year:", selectedYear);
 
   return (
     <div id="slider" className="o-slider" ref={sliderRef}>
+
       <div className="badal1">
         <img src={badal} className=".badal" />
       </div>
