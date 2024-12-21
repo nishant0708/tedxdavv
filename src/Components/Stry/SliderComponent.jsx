@@ -382,26 +382,32 @@ const SliderComponent = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     const oSliderItems = document.querySelectorAll(".o-slider__item");
+    const sliderContainer = document.querySelector(".o-slider");
+    
+    // Calculate total scroll distance
+    const totalDistance = sliderContainer.offsetHeight - window.innerHeight;
 
-    oSliderItems.forEach((item, index) => {
-      ScrollTrigger.create({
-        trigger: item,
-        onEnter: () => {
-          const progress = ((index + 1) / oSliderItems.length) * 100;
+    // Create a ScrollTrigger for the progress bar
+    ScrollTrigger.create({
+      trigger: sliderContainer,
+      start: "top top",
+      end: "bottom bottom",
+      onUpdate: (self) => {
+        const progress = (self.progress * 100).toFixed(2);
+        if (progressBarRef.current) {
           gsap.to(progressBarRef.current, {
             width: `${progress}%`,
-            duration: 0.5,
+            duration: 0.1,
+            ease: "none"
           });
-        },
-        onEnterBack: () => {
-          const progress = (index / oSliderItems.length) * 100;
-          gsap.to(progressBarRef.current, {
-            width: `${progress}%`,
-            duration: 0.5,
-          });
-        },
-      });
+        }
+      }
     });
+
+    // Clean up
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, [selectedYear]);
 
   const handleChange = (event) => {
@@ -416,14 +422,16 @@ const SliderComponent = () => {
   };
   useEffect(() => {
     const options = {
-      threshold: 0.1 // Trigger when at least 10% of the element is visible
+      threshold: 0.0001
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const badal = document.querySelector('.badal1');
         const title = document.querySelector('.o-slider__title');
-        
+        const year = document.querySelector('.year-drop');
+        const progress = document.querySelector('.progress-bar');
+
         if (entry.isIntersecting) {
           // When slider enters viewport
           gsap.to(badal, {
@@ -431,7 +439,7 @@ const SliderComponent = () => {
             duration: 0.5,
             ease: "power2.inOut",
             opacity: 1,
-            y: 0
+         
           });
           
           gsap.to(title, {
@@ -439,7 +447,24 @@ const SliderComponent = () => {
             duration: 0.5,
             ease: "power2.inOut",
             opacity: 1,
-            y: 0
+           
+          });
+
+          gsap.to(year, {
+            position: 'fixed',
+            duration: 0.5,
+            ease: "power2.inOut",
+            opacity: 1,
+           
+          });
+
+          gsap.to(progress, {
+            position: 'fixed',
+            duration: 0.5,
+            ease: "power2.inOut",
+            opacity: 1,
+            bottom: 0,
+            left: 0
           });
         } else {
           // When slider exits viewport
@@ -447,33 +472,49 @@ const SliderComponent = () => {
             position: 'absolute',
             duration: 0.5,
             ease: "power2.inOut",
-            opacity: 0.8,
-            y: 20
+            
           });
           
           gsap.to(title, {
             position: 'absolute',
             duration: 0.5,
             ease: "power2.inOut",
-            opacity: 0.8,
-            y: 20
+            
           });
+
+          gsap.to(year, {
+            position: 'absolute',
+            duration: 0.5,
+            ease: "power2.inOut",
+            
+          });
+
+         
         }
       });
     }, options);
 
     // Add initial styles
     gsap.set('.badal1', {
-      opacity: 0.8,
+      opacity: 0,
       y: 20,
       position: 'absolute'
     });
     
     gsap.set('.o-slider__title', {
-      opacity: 0.8,
+      opacity: 0,
       y: 20,
       position: 'absolute'
     });
+
+    gsap.set('.year-drop', {
+      opacity: 0,
+
+      position: 'absolute',
+      
+    });
+
+   
 
     const slider = document.getElementById('slider');
     if (slider) {
@@ -515,9 +556,7 @@ const SliderComponent = () => {
       </select>
 
       <SpeakerList selectedYear={selectedYear} />
-      <div
-        className="progress-bar" /*style={{ display: showTitle ? 'block' : 'none' }}*/
-      >
+      <div className="progress-bar">
         <div ref={progressBarRef} className="progress"></div>
       </div>
     </div>
