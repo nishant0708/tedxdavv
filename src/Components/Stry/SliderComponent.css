@@ -14,9 +14,8 @@ button:focus {
   --title-size: calc(1 / 4 * 100vh);
   background-color: #eae6e6;
   position: relative;
-
   overflow: hidden;
-  z-index: 0;
+z-index: 1;
 }
 .o-slider.has-images .o-slider__btn span:nth-child(1) {
   display: none;
@@ -34,6 +33,10 @@ button:focus {
 .o-slider.has-images .o-slider__img {
   transform: scale(1);
 }
+.badal1, .o-slider__title {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+  }
 .o-slider__btn {
   z-index: 2;
   position: fixed;
