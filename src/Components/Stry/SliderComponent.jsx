@@ -382,26 +382,32 @@ const SliderComponent = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     const oSliderItems = document.querySelectorAll(".o-slider__item");
+    const sliderContainer = document.querySelector(".o-slider");
+    
+    // Calculate total scroll distance
+    const totalDistance = sliderContainer.offsetHeight - window.innerHeight;
 
-    oSliderItems.forEach((item, index) => {
-      ScrollTrigger.create({
-        trigger: item,
-        onEnter: () => {
-          const progress = ((index + 1) / oSliderItems.length) * 100;
+    // Create a ScrollTrigger for the progress bar
+    ScrollTrigger.create({
+      trigger: sliderContainer,
+      start: "top top",
+      end: "bottom bottom",
+      onUpdate: (self) => {
+        const progress = (self.progress * 100).toFixed(2);
+        if (progressBarRef.current) {
           gsap.to(progressBarRef.current, {
             width: `${progress}%`,
-            duration: 0.5,
+            duration: 0.1,
+            ease: "none"
           });
-        },
-        onEnterBack: () => {
-          const progress = (index / oSliderItems.length) * 100;
-          gsap.to(progressBarRef.current, {
-            width: `${progress}%`,
-            duration: 0.5,
-          });
-        },
-      });
+        }
+      }
     });
+
+    // Clean up
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, [selectedYear]);
 
   const handleChange = (event) => {
@@ -414,11 +420,120 @@ const SliderComponent = () => {
       });
     
   };
+  useEffect(() => {
+    const options = {
+      threshold: 0.0001
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const badal = document.querySelector('.badal1');
+        const title = document.querySelector('.o-slider__title');
+        const year = document.querySelector('.year-drop');
+        const progress = document.querySelector('.progress-bar');
+
+        if (entry.isIntersecting) {
+          // When slider enters viewport
+          gsap.to(badal, {
+            position: 'fixed',
+            duration: 0.5,
+            ease: "power2.inOut",
+            opacity: 1,
+         
+          });
+          
+          gsap.to(title, {
+            position: 'fixed',
+            duration: 0.5,
+            ease: "power2.inOut",
+            opacity: 1,
+           
+          });
+
+          gsap.to(year, {
+            position: 'fixed',
+            duration: 0.5,
+            ease: "power2.inOut",
+            opacity: 1,
+           
+          });
+
+          gsap.to(progress, {
+            position: 'fixed',
+            duration: 0.5,
+            ease: "power2.inOut",
+            opacity: 1,
+            bottom: 0,
+            left: 0
+          });
+        } else {
+          // When slider exits viewport
+          gsap.to(badal, {
+            position: 'absolute',
+            duration: 0.5,
+            ease: "power2.inOut",
+            
+          });
+          
+          gsap.to(title, {
+            position: 'absolute',
+            duration: 0.5,
+            ease: "power2.inOut",
+            
+          });
+
+          gsap.to(year, {
+            position: 'absolute',
+            duration: 0.5,
+            ease: "power2.inOut",
+            
+          });
+
+         
+        }
+      });
+    }, options);
+
+    // Add initial styles
+    gsap.set('.badal1', {
+      opacity: 0,
+      y: 20,
+      position: 'absolute'
+    });
+    
+    gsap.set('.o-slider__title', {
+      opacity: 0,
+      y: 20,
+      position: 'absolute'
+    });
+
+    gsap.set('.year-drop', {
+      opacity: 0,
+
+      position: 'absolute',
+      
+    });
+
+   
+
+    const slider = document.getElementById('slider');
+    if (slider) {
+      observer.observe(slider);
+    }
+
+    // Cleanup
+    return () => {
+      if (slider) {
+        observer.unobserve(slider);
+      }
+    };
+  }, []);
 
   // console.log("Selected Year:", selectedYear);
 
   return (
     <div id="slider" className="o-slider" ref={sliderRef}>
+
       <div className="badal1">
         <img src={badal} className=".badal" />
       </div>
@@ -441,9 +556,7 @@ const SliderComponent = () => {
       </select>
 
       <SpeakerList selectedYear={selectedYear} />
-      <div
-        className="progress-bar" /*style={{ display: showTitle ? 'block' : 'none' }}*/
-      >
+      <div className="progress-bar">
         <div ref={progressBarRef} className="progress"></div>
       </div>
     </div>
