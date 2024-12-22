@@ -1,0 +1,31 @@
+
+
+.ABOUT_2025_main{
+    width: screen;
+    min-height: 100dvh;
+    background-color: black;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 80px;
+    padding: 60px 100px;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.about_section_1, .about_section_3 {
+    width: max-content;
+    display:  flex;
+    flex-direction: row;
+    gap: 100px;
+    min-height: 100dvh;
+}
+
+.about_section_2{
+    width: 100%;
+    display:  flex;
+    flex-direction: row;
+    justify-content: space-around;
+    min-height: 100dvh;   
+}

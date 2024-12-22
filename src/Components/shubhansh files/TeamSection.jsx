@@ -4,26 +4,16 @@ import Header from './Header';
 import { useEffect, useRef, useState } from 'react';
 import teamData from '../../teamData.json';
 import gsap from 'gsap';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 export default function TeamSection(){    
 
-    const sectionRefs = {
-        section1: useRef(null),
-        section2: useRef(null),
-        section3: useRef(null),
-    };
+    
+   
 
-
-    const handleOptionChange = (event) => {
-        const selectedValue = event.target.value;
-        const selectedRef = sectionRefs[selectedValue];
-        if (selectedRef && selectedRef.current) {
-          selectedRef.current.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
     
     //fetching data
     // let data_core = teamData[2024]['Core Team'];
@@ -36,29 +26,39 @@ export default function TeamSection(){
     //     })
     // });
 
-    const [year, setYear] = useState(true);
+    const [year, setYear] = useState(2024);
     const [len, setLen] = useState(null);
+    const navigate = useNavigate();
 
-    function yearHandler(){
-        setYear(!year);
+    function yearHandler(val){
+        setYear(val);
+
+        scrollToTop();
+
+        setTimeout(() => {
+            year === 2024 ? navigate('/teams-2023'): navigate('/teams-2024');
+        }, 800);
     }
+    
+    // Current page
+    const pathname = window.location.pathname;
+    // console.log('pathname teams --', pathname);
 
-    useEffect(() => {
-        setYear(year);
+    // useEffect(() => {
+    //     scrollToTop();
 
-        
-          
-    },[])
-    // console.log(teamData[2024]["Core Team"].length);
-
-    // let leng = teamData[2024]["Core Team"].length + teamData[2023]["Core Team"].length;
-    // console.log(leng);
+    //     setTimeout(() => {
+    //         year === 2024 ? navigate('/teams-2024'): navigate('/teams-2023');
+    //       }, 800);
+    
+    //   }, [year, navigate]);
 
 
     
         const [isVisible, setIsVisible] = useState(false);
       
         useEffect(() => {
+            
           const toggleVisibility = () => {
             if (window.pageYOffset > 1700) {
               setIsVisible(true);
@@ -71,6 +71,7 @@ export default function TeamSection(){
       
           // Clean up the event listener
           return () => window.removeEventListener('scroll', toggleVisibility);
+          
         }, []);
 
         useEffect(() =>{
@@ -110,7 +111,8 @@ export default function TeamSection(){
             behavior: 'smooth'
           });
         };
-      
+
+ 
     return(
         <div className="teams-section">
             
@@ -120,9 +122,10 @@ export default function TeamSection(){
             <div className='dropdown-wrapper' >
 
                 <select className='dropdown'  onChange={yearHandler}>
-                    <option value="2023" >2023</option>
-
+                    
                     <option value="2024" >2024</option>
+
+                    <option value="2023" >2023</option>
 
                 </select>
             </div>
@@ -130,22 +133,22 @@ export default function TeamSection(){
             <div>
                 {
                     
-                    year
+                    pathname == '/teams-2024'
                     ?
-                    Object.keys(teamData[2023]).map(team =>{
+                    Object.keys(teamData[2024]).map(team =>{
                         //console.log(teamData[2023][team].length);
                         return(
                             <div key={team}>
-                                <Teams team_2024={teamData[2023][team]} nm={team}/>
+                                <Teams team_2024={teamData[2024][team]} nm={team}/>
                             </div>
                         )
                     })
                     :
-                    Object.keys(teamData[2024]).map(team =>{
+                    Object.keys(teamData[2023]).map(team =>{
                         //console.log(teamData[2024][team]);
                         return(
                             <div key={team}>
-                                <Teams team_2024={teamData[2024][team]} nm={team}/>
+                                <Teams team_2024={teamData[2023][team]} nm={team}/>
                             </div>
                         )
                     })

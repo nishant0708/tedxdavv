@@ -28,7 +28,7 @@ export default function TeamCard(props){
                 scale:1,
                 opacity: 1,
                 xPercent: 0,
-                delay: 1,
+                delay: 1.6,
                 duration: 1.5,
                 ease: "power3.inOut",
                 
