@@ -1,5 +1,7 @@
-
-
+@font-face {
+    font-family: 'Protomolecule-regular';
+    src: url('../Fonts/Protomolecule-Regular.ttf') format('truetype');
+}
 .ABOUT_2025_main{
     width: screen;
     min-height: 100dvh;
@@ -11,7 +13,6 @@
     row-gap: 80px;
     padding: 60px 100px;
     text-transform: uppercase;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .about_section_1, .about_section_3 {
@@ -20,6 +21,20 @@
     flex-direction: row;
     gap: 100px;
     min-height: 100dvh;
+    
+}
+
+.about_2025_stars {
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    min-width: 100dvw;
+    height: 100dvh;
+    z-index: 0; 
+    /* animation: ease star-blink  2s infinite alternate; */
+    background: url('../../Images/stars1.jpg') no-repeat center center; 
+    opacity: 0.25;
+    background-size: cover; 
 }
 
 .about_section_2{

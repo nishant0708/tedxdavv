@@ -1,11 +1,13 @@
 import './ImageAbout.css';
-import aboutImage from '../../Images/About Section image 1.jpeg';
+// import aboutImage from '../../Images/About Section image 1.jpeg';
 
 import React, { useEffect, useRef, useState } from 'react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 
-const ImageAbout = () => {
+const ImageAbout = (props) => {
+
+    let aboutImage = props.img;
 
     const aboutImagesContainerRef = useRef(null);
     const aboutImage1 = useRef(null);
@@ -90,7 +92,7 @@ const ImageAbout = () => {
             opacity: 0,
         },{
             opacity: 1,
-            duration: 0.1,
+            duration: 0.6,
             ease: 'power4.out'
         }).fromTo(aboutImage4.current,{
             opacity: 0,
@@ -114,7 +116,7 @@ const ImageAbout = () => {
             opacity: 0,
         },{
             opacity: 1,
-            duration: 0.3,
+            duration: 0.8,
             ease: 'power4.out'
         }).fromTo(aboutImage2.current,{
             opacity: 0,

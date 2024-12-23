@@ -2,6 +2,9 @@ import gsap from 'gsap';
 import ImageAbout from '../image About/ImageAbout';
 import TypeHeading from '../TypeHeading/TypeHeading';
 import TypePara from '../TypePara/TypePara';
+import image1 from '../../Images/About Section image 1.jpeg';
+import image2 from '../../Images/About Section image 2.jpeg';
+import image3 from '../../Images/About Section image 3.jpeg';
 import './About.css';
 
 import React, { useEffect, useRef } from 'react'
@@ -15,7 +18,9 @@ const About = () => {
 
         <div className='about_section_1'>
 
-            <ImageAbout />
+            <div className='about_2025_stars'></div>
+
+            <ImageAbout img={image1} />
 
             <span ref={aboutTextContainerRef} className='' style={{ display: 'flex', flexDirection: 'column', rowGap: '50px'}} >
                 <TypeHeading content='Interconnectedness' />
@@ -26,19 +31,23 @@ const About = () => {
 
         <div className='about_section_2'>
 
+            <div className='about_2025_stars'></div>
+
             <span className='' style={{ display: 'flex', flexDirection: 'column', rowGap: '50px'}} >
                 <TypeHeading content='Self - discovery' />
 
                 <TypePara para='Everyone has an innate desire to discover their purpose and identity. Yet, many of us get lost or give up, trapped by external expectations. This theme can explore how people find their inner truths and overcome these barriers.' />
             </span>
 
-            <ImageAbout />
+            <ImageAbout img={image2} />
 
         </div>
 
         <div className='about_section_3'>
 
-            <ImageAbout />
+            <div className='about_2025_stars'></div>
+
+            <ImageAbout img={image3} />
 
             <span className='' style={{ display: 'flex', flexDirection: 'column', rowGap: '50px'}} >
                 <TypeHeading content='Unseen Forces' />
