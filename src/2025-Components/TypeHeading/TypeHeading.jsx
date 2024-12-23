@@ -24,7 +24,7 @@ const TypeHeading = (props) => {
                         trigger: typeHeadingRef.current,
                         start: 'top center',
                         scrub: false,
-                        markers: false,
+                        markers: true,
                         toggleActions: 'play none none none', // Ensure it plays only once
                         onEnter: () => setHasHeadingPlayed(true), // Mark as played on enter
                     },

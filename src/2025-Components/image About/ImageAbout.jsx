@@ -155,43 +155,43 @@ const ImageAbout = (props) => {
 
         {/* image div 1 */}
         <div ref={aboutImage1} className=' AboutImage_1' style={{height: '8px', overflow: 'hidden'}}>
-            <img src={aboutImage} alt="" width={'100%'} height={'auto'} />
+            <img loading='lazy' src={aboutImage} alt="" width={'100%'} height={'auto'} />
         </div>
 
         
         {/* image div 2 */}
         <div ref={aboutImage2} className=' AboutImage_2' style={{height: '13px', overflow: 'hidden'}}>
-            <img src={aboutImage} alt="" width={'100%'} height={'auto'} />
+            <img loading='lazy' src={aboutImage} alt="" width={'100%'} height={'auto'} />
         </div>
 
         {/* image div 3 */}
         <div ref={aboutImage3} className=' AboutImage_3' style={{height: '18px', overflow: 'hidden' }}>
-            <img src={aboutImage} alt="" width={'100%'} height={'auto'} />
+            <img loading='lazy' src={aboutImage} alt="" width={'100%'} height={'auto'} />
         </div>
 
         {/* image div 4 */}
         <div ref={aboutImage4} className=' AboutImage_4' style={{height: '26px', overflow: 'hidden'}}>
-            <img src={aboutImage} alt="" width={'100%'} height={'auto'} />
+            <img loading='lazy' src={aboutImage} alt="" width={'100%'} height={'auto'} />
         </div>
 
         {/* image div 5 */}
         <div ref={aboutImage5} className=' AboutImage_5' style={{height: '40px', overflow: 'hidden'}}>
-            <img src={aboutImage} alt="" width={'100%'} height={'auto'} />
+            <img loading='lazy' src={aboutImage} alt="" width={'100%'} height={'auto'} />
         </div>
 
         {/* image div 6 */}
         <div ref={aboutImage6} className=' AboutImage_6' style={{height: '60px', overflow: 'hidden'}}>
-            <img src={aboutImage} alt="" width={'100%'} height={'auto'} />
+            <img loading='lazy' src={aboutImage} alt="" width={'100%'} height={'auto'} />
         </div>
 
         {/* image div 7 */}
         <div ref={aboutImage7} className=' AboutImage_7' style={{height: '100px', overflow: 'hidden'}}>
-            <img src={aboutImage} alt="" width={'100%'} height={'auto'} />
+            <img loading='lazy' src={aboutImage} alt="" width={'100%'} height={'auto'} />
         </div>
 
         {/* image div 8 */}
         <div ref={aboutImage8} className=' AboutImage_8' style={{height: '233px', overflow: 'hidden'}}>
-            <img src={aboutImage} alt="" width={'100%'} height={'auto'} />
+            <img loading='lazy' src={aboutImage} alt="" width={'100%'} height={'auto'} />
         </div>
 
         

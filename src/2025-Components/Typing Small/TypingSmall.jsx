@@ -1,4 +1,4 @@
-import './TypePara.css';
+import './TypingSmall.css';
 import { TypeAnimation } from 'react-type-animation';
 
 import React, { useEffect, useRef, useState } from 'react';
@@ -7,26 +7,26 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TypePara = (props) => {
-    const typeParaRef = useRef(null);
-    const [hasParaPlayed, setHasParaPlayed] = useState(false);
+const TypeSmall = (props) => {
+    const typeSmallRef = useRef(null);
+    const [hasSmallPlayed, setHasSmallPlayed] = useState(false);
 
     useEffect(() => {
-        if (!hasParaPlayed) {
+        if (!hasSmallPlayed) {
             const animation = gsap.fromTo(
-                typeParaRef.current,
+                typeSmallRef.current,
                 {
                     display: 'none',
                 },
                 {
                     display: 'inline-block',
                     scrollTrigger: {
-                        trigger: typeParaRef.current,
-                        start: 'top 35%',
+                        trigger: typeSmallRef.current,
+                        start: 'top 27%',
                         scrub: false,
                         markers: false,
                         toggleActions: 'play none none none', // Ensure it plays only once
-                        onEnter: () => setHasParaPlayed(true), // Mark as played on enter
+                        onEnter: () => setHasSmallPlayed(true), // Mark as played on enter
                     },
                 }
             );
@@ -38,16 +38,18 @@ const TypePara = (props) => {
                 }
             };
         }
-    }, [hasParaPlayed]);
+    }, [hasSmallPlayed]);
 
     return (
-        <span className='typing_text_para' ref={typeParaRef}  >
-            {hasParaPlayed && (
+        <span className='typing_text_para relative' ref={typeSmallRef} 
+            style={{width: '100px',}}  
+        >
+            {hasSmallPlayed && (
                 <TypeAnimation
                     sequence={[props.para]}
                     wrapper="span"
-                    speed={80}
-                    style={{whiteSpace: 'pre-line', display: 'inline-block', textAlign: 'justify' }}
+                    speed={40}
+                    style={{whiteSpace: 'pre-line', fontWeight: '100', fontSize: '8px', display: 'inline-block', textAlign: 'justify' }}
                     repeat={0}
                     cursor={false}
                 />
@@ -56,4 +58,4 @@ const TypePara = (props) => {
     );
 };
 
-export default TypePara;
+export default TypeSmall;

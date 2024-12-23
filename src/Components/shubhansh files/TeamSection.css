@@ -1,5 +1,10 @@
+@font-face {
+    font-family: 'Protomolecule-regular';
+    src: url('../../2025-Components/Fonts/Protomolecule-Regular.ttf') format('truetype');
+}
+
 .teams-section{
-    background: #EAE6E6;
+    background: #000000;
     scroll-behavior: smooth;
 }
 

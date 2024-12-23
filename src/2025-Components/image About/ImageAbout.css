@@ -9,7 +9,7 @@
 
 .AboutImage_1 .AboutImage_2 .AboutImage_3 .AboutImage_4 .AboutImage_5 .AboutImage_6 .AboutImage_7 .AboutImage_8{
     width: 100%;
-    overflow: hidden;
+    overflow: clip;
 }
 
 .AboutImage_2 img{
@@ -34,5 +34,11 @@
 .AboutImage_8 img{
     margin-top: -314px;
     border-radius: 0 0 20px 20px;
+}
 
+
+@media screen and (max-width: 480px){
+    .ImageAbout_2025_main{
+        width: 90dvw;
+    }
 }
