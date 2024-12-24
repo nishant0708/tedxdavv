@@ -13,6 +13,7 @@ export default function TeamCard(props){
 
     //hover text animation
     const cardRef = useRef(null);
+    const teamsCardRef = useRef(null);
     const twitterTween = useRef(null);
 
     useEffect(() => {
@@ -20,7 +21,7 @@ export default function TeamCard(props){
         let tl = gsap.timeline();
 
         if(window.innerWidth> 480){
-            tl.fromTo('.teams-card',{
+            tl.fromTo(teamsCardRef.current,{
                 opacity:0,
                 xPercent:140,
                 scale: 0.3,
@@ -34,7 +35,7 @@ export default function TeamCard(props){
                 
             })
         }else{
-            tl.fromTo('.teams-card',{
+            tl.fromTo(teamsCardRef.current,{
                 opacity:0,
                 xPercent:140,
                 scale: 0.3,
@@ -51,7 +52,7 @@ export default function TeamCard(props){
                 gsap.to('.fixed-headings',{
                     y: -100
                 })
-                gsap.to('.teams-card',{
+                gsap.to(teamsCardRef.current,{
                     scale: 0.5
                 })
             }
@@ -83,7 +84,7 @@ export default function TeamCard(props){
 
     return(
         <div className='teams-card-wrapper' id={props.id}><Tilt>
-            <div className='teams-card'  >
+            <div ref={teamsCardRef} className='teams-card'  >
                 <div>
                     <h1 className='member-name'>{name}</h1>
                 </div>

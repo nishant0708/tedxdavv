@@ -6,6 +6,19 @@
 .teams-section{
     background: #000000;
     scroll-behavior: smooth;
+    background-size: 500px;
+}
+
+.teams-section-bg{
+    height: 600px;
+    z-index: 0;
+    width: 700px;
+    position: fixed;
+    top: -100px;
+    left: -170px;
+    background: url('../../Images/landing2025_milky.png') no-repeat;
+    filter: contrast(110%) brightness(100%) saturate(180%);
+    background-size: 700px;
 }
 
 .dropdown-wrapper{
@@ -18,18 +31,22 @@
 }
 
 .dropdown{
-    background: #e62b1e;
+    background: #ffffff23;
     padding:  7px 10px;
     text-align: center;
-    font-weight: 700;
+    border: 1px solid white;
+    backdrop-filter: blur(3px);
+    font-weight: 100;
     font-size: large;
     border-radius: 8px;
-    box-shadow: 3px 5px 10px 0px #2e2b2bc2;
+    box-shadow: 3px 5px 10px 0px #2e2b2b00;
     /* margin: 20px; */
 }
 
 @media screen and (max-width: 800px) {
     .dropdown-wrapper{
+    background: #ffffff23;
+    visibility: hidden;
         position: fixed;
         color: white;
         width: 120px;

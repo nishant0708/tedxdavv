@@ -114,7 +114,9 @@ export default function TeamSection(){
 
  
     return(
-        <div className="teams-section">
+        <div className="teams-section">\
+
+            <div className='teams-section-bg'></div>
             
             <Header />
             

@@ -5,6 +5,7 @@ import TypePara from '../TypePara/TypePara';
 import image1 from '../../Images/About Section image 1.jpeg';
 import image2 from '../../Images/About Section image 2.jpeg';
 import image3 from '../../Images/About Section image 3.jpeg';
+import image4 from '../../Images/About Section image 4.jpeg';
 import './About.css';
 
 import React, { useEffect, useRef } from 'react'
@@ -21,7 +22,7 @@ const About = () => {
 
             {/* <div className='about_2025_stars'></div> */}
 
-            <ImageAbout img={image1} />
+            <ImageAbout img={image4} />
 
             <span ref={aboutTextContainerRef} className=' flex flex-col gap-[50px] w-[90dvw] lg:w-auto' >
                 <TypeHeading content='Interconnectedness' />
@@ -49,7 +50,7 @@ const About = () => {
                 </div>
             </span>
 
-            <ImageAbout img={image2} />
+            <ImageAbout img={image1} />
 
         </div>
 

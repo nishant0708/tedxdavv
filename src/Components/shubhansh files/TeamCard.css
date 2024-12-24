@@ -84,6 +84,8 @@
     transition-timing-function:ease-in-out;
     border-radius: 20px;
     z-index: 30;
+    filter: sepia(60%) contrast(70%) contrast(170%) saturate(200%) hue-rotate(320deg);
+    /* filter: saturate(20%); */
 }
 .member-image{
     position: relative;
