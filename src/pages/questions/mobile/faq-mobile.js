@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./styleMobile.module.css";
 import faq from "../FAQs.png";
-import bg from "./lines(traced).png";
 import gif from ".././FAQ.gif";
 
 

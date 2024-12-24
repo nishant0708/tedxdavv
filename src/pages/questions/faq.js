@@ -1,11 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 import "./style.css";
 import faq from "./FAQs.png";
 import gsap, { Power1 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import red from "./redflower.png";
-import white from "./whiteflower.png";
 import { Breakpoint, BreakpointProvider } from "react-socks";
 import StickyScroll2 from "./mobile/faq-mobile";
 import gif from "./FAQ.gif";
