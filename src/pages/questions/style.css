@@ -1,8 +1,7 @@
-
 .hero {
-    height: 10  0vh;
+    height: 10 0vh;
     width: 100vw;
-    background-color:#eae6e6;
+    background-color: black;
     z-index: 2;
     display: flex;
     font-family: "Poppins";
@@ -38,8 +37,6 @@
     font-family: "Poppins";
 }
 
-
-
 button {
     margin-top: 1vh;
     text-align: right;
@@ -47,9 +44,35 @@ button {
     padding-right: 3%;
     margin-bottom: 3vh;
     font-size: 4vh;
-    color: black;
+    color: white;
     z-index: 2;
 }
+
+.topBGif {
+    width: 41vw;
+    height: 30vh;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 17%,
+        rgba(0, 0, 0, 0) 84%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    position: absolute;
+}
+
+/* .botBGif {
+    width: 41vw;
+    height: 20vh;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 20%
+    );
+    position: absolute;
+} */
 
 @media (max-aspect-ratio: 1.3/1) {
     button {
@@ -57,7 +80,7 @@ button {
         padding-right: 3%;
         margin-bottom: 1vh;
         font-size: 3.5vh;
-        color: black;
+        color: white;
         z-index: 2;
     }
 
@@ -69,19 +92,16 @@ button {
         width: 45vw;
         z-index: 2;
     }
+}
 
-  
-
-  }
-
-  @media (max-aspect-ratio: 1.76/1) {
+@media (max-aspect-ratio: 1.76/1) {
     button {
         padding-top: 2vh;
         text-align: right;
         padding-right: 3%;
         margin-bottom: 1vh;
         font-size: 3.5vh;
-        color: black;
+        color: white;
         z-index: 2;
     }
 
@@ -98,25 +118,26 @@ button {
         transform: translateY(10vh);
         margin: 10vh 4vw;
         margin-bottom: 8vh;
-        font-size: 3.5vh;
         width: 35vw;
         height: 40vh;
         line-height: 3.3vh;
     }
 
-  }
+    .faq-answers {
+        font-size: 2.5vh;
+        font-weight: 500;
+        line-height: 110%;
+    }
+}
 
-
-
-
-.flower_spacebox {
+/* .flower_spacebox {
     margin-left: 30%;
     height: 40%;
     width: 40%;
     z-index: 2;
-}
+} */
 
-.yellow1 hr {
+/* .yellow1 hr {
     position: absolute;
     transform: translate(3vw, 10vh);
     width: 0vw;
@@ -125,9 +146,9 @@ button {
     border-radius: 0 5vh 5vh 0;
     border-color: yellow;
     z-index: 1;
-}
+} */
 
-.yellow2 hr {
+/* .yellow2 hr {
     position: absolute;
     transform: translate(39vw, 10vh);
     width: 00vw;
@@ -136,20 +157,18 @@ button {
     border-radius: 5vh 5vh 5vh 5vh;
     border-color: yellow;
     z-index: 1;
-}
+} */
 
-
-
-.whiteflower {
+/* .whiteflower {
     
     opacity: 0;
     position: absolute;
     width: 1vh;
     z-index: 100;
     transform: translate(15vw, 35vh);
-}
+} */
 
-.redflower {
+/* .redflower {
     opacity: 0;
     
     width: 5vh;
@@ -157,40 +176,49 @@ button {
     z-index: 100000;
         transform: translate(42vw, -1vh);
    
-}
+} */
 
+.gif {
+    width: 41vw;
+    height: 30vh;
+}
 
 .Answers {
     opacity: 0;
-    transform: translate(10vw, 30vh);
+    transform: translate(10vw, 0vh);
     position: relative;
-    margin: 2vh 4vw;
+    /* margin: 2vh 0vw; */
+    margin: 0vh 0vw 10vh 0vw;
+    margin-bottom: 10vh;
     z-index: 2;
-    display: grid;
-    align-items: center;
-    text-align: center;
+    /* display: grid; */
+    /* align-items: center; */
+    text-align: left;
     font-size: 3.5vh;
     font-weight: 200;
-    text-align: right;
-    width: 35vw;
-    color: black;
-    height: 40vh;
+    /* text-align: right; */
+    width: 41vw;
+    color: white;
+    height: auto;
     line-height: 3.3vh;
 }
 
-
-
 .faq {
-    margin-top: 20vh;
+    margin-top: 1vh;
     opacity: 0;
     z-index: 2;
     height: 5vh;
     position: absolute;
-    height: 20vh;
-    bottom: 5vh;
+    /* height: 20vh; */
+    bottom: 10vh;
 }
 
-.samarth{
+.faq-answers {
+    font-weight: 500;
+    line-height: 120%;
+}
+
+.samarth {
     position: relative;
     z-index: 1;
 }
