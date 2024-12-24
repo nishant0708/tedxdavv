@@ -164,7 +164,6 @@ const StickyScroll = ({ content }) => {
                                         alt="GIF.."
                                         className="gif"
                                     />
-                                    <div className="botBGif"></div>
                                 </div>
 
                                 <div id="answers" className="Answers">
