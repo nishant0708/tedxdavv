@@ -16,10 +16,10 @@ const TypeHeading = (props) => {
             const animationHeadingType = gsap.fromTo(
                 typeHeadingRef.current,
                 {
-                    display: 'none',
+                    opacity: 1,
                 },
                 {
-                    display: 'inline-block',
+                    opacity: 1,
                     scrollTrigger: {
                         trigger: typeHeadingRef.current,
                         start: 'top center',
@@ -41,7 +41,9 @@ const TypeHeading = (props) => {
     }, [hasHeadingPlayed]);
 
     return (
-        <h3 className='typing_text_heading' ref={typeHeadingRef}>
+        <h3 className='typing_text_heading' 
+        ref={typeHeadingRef}
+        >
             {hasHeadingPlayed && (
                 <TypeAnimation
                     sequence={props.content}

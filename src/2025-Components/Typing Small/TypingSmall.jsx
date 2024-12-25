@@ -16,10 +16,10 @@ const TypeSmall = (props) => {
             const animation = gsap.fromTo(
                 typeSmallRef.current,
                 {
-                    display: 'none',
+                    opacity: 1,
                 },
                 {
-                    display: 'inline-block',
+                    opacity: 1,
                     scrollTrigger: {
                         trigger: typeSmallRef.current,
                         start: 'top 27%',

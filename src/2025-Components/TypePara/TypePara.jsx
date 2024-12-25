@@ -16,10 +16,10 @@ const TypePara = (props) => {
             const animation = gsap.fromTo(
                 typeParaRef.current,
                 {
-                    display: 'none',
+                    opacity: 1,
                 },
                 {
-                    display: 'inline-block',
+                    opacity: 1,
                     scrollTrigger: {
                         trigger: typeParaRef.current,
                         start: 'top 35%',
