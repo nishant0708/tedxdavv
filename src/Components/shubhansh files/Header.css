@@ -47,7 +47,7 @@
     transform: translateZ(40px);
 }
 
-@media screen and (max-width:481px) {
+@media screen and (max-width:480px) {
     
     .meet_our_team-heading{
         display: flex;
@@ -68,7 +68,7 @@
     .meet_our_team-heading_words{
         position: relative;
         font-size: 60px;
-        margin-top: -20px;
+        margin-top: 20px;
     }
     .meet_our_team-meet{
         transform: translateY(0vh);
@@ -84,7 +84,7 @@
     }
 }
 
-@media screen and (max-width:851px) {
+@media screen and (max-width:850px) {
     .meet_our_team-heading{
         display: flex;
         flex-direction: column;
@@ -103,7 +103,7 @@
     .meet_our_team-heading_words{
         position: relative;
         font-size: 70px;
-        margin-top: -20px;
+        margin-top: 20px;
     }
     .meet_our_team-meet{
         transform: translateY(0vh);

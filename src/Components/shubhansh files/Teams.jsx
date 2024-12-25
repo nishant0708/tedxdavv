@@ -93,7 +93,7 @@ export default function Teams(props){
                     translateX:'130vw',
                     
                 },{
-                    translateX:`-${len*45}vw`,
+                    translateX:`-${len*49}vw`,
                     ease:'none',
                     duration:1,
                     scrollTrigger:{
@@ -111,7 +111,7 @@ export default function Teams(props){
                 }
             }else{
                 pinRef.current = gsap.fromTo(sectionRef.current,{
-                    translateX:'100vw',
+                    translateX:'120vw',
                     
                 },{
                     translateX:`-${len*200}px`,

@@ -78,7 +78,7 @@ const ImageAbout = (props) => {
             scrollTrigger:{
                 trigger: aboutImagesContainerRef.current,
                 start: 'top 35%',
-                markers: false,
+                markers: true,
             }
         })
 
