@@ -10,13 +10,17 @@ import './About.css';
 
 import React, { useEffect, useRef } from 'react'
 import TypeSmall from '../Typing Small/TypingSmall';
+import SideMarquee from '../Side Marquee/SideMarquee';
 
 const About = () => {
     const aboutTextContainerRef = useRef(null);
 
     
   return (
-    <div className='ABOUT_2025_main'>
+    <div className='ABOUT_2025_main overflow-y-clip'>
+
+        <SideMarquee isRight={false}/>
+
 
         <div className='about_section_1'>
 

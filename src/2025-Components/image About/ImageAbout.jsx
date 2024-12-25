@@ -133,19 +133,6 @@ const ImageAbout = (props) => {
         })
 
 
-        // gsap.fromTo(aboutImagesContainerRef.current,{
-        //     y: 0
-        // },{
-        //     y: 200,
-        //     scrollTrigger:{
-        //         trigger: aboutImagesContainerRef.current,
-        //         start: 'top center',
-        //         end: 'bottom center',
-        //         scrub: true,
-        //         markers: true,
-        //     }
-        // })
-
 
     },[])
 

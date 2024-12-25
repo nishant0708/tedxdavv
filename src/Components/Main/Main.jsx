@@ -17,9 +17,9 @@ const Main = () => {
   return (
     <div>
 
-      <div className=' absolute top-[1031px] left-[-1059px] z-50 -rotate-90'>
-        <SideMarquee />
-      </div>
+      {/* <div className=' absolute top-[1031px] left-[-1059px] z-50 -rotate-90'> */}
+        <SideMarquee isRight={true}/>
+      {/* </div> */}
       
        <Landing_page/>
        <About />
