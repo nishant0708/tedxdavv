@@ -55,6 +55,10 @@
     height: 80px;
     width: 80vw;
 }
+select:focus-visible{
+    outline: none;
+    color: black;
+}
 
 .Answers {
     opacity: 1;
