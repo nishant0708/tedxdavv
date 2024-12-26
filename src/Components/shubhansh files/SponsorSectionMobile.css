@@ -28,7 +28,7 @@
 
 .sponsor-heading-Mobile{
     font-size: 66px;
-    color: #eb0028;
+    color: #ffffff;
     font-family: 'poppins', sans-serif;
     font-weight: 900;
     position: relative;
@@ -70,5 +70,5 @@
 
 .and{
     color: #00000000;
-    -webkit-text-stroke: 2px #eb0028;
+    -webkit-text-stroke: 2px #ffffff;
 }

@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import "./Navbar.css";
 import logoblack from '../Assests/Images/logo-black 1.png';
-import Hamburger from 'hamburger-react';
+import { CgMenuLeftAlt } from "react-icons/cg";
 import { Link, useLocation } from 'react-router-dom';
 
 import logowhite from "../Assests/Images/logo-white 1.png"
@@ -113,14 +113,14 @@ const Navbar = () => {
   //     setNavLogo(logoblack); // Reset logo to the default logo
   //   }
   };
-  const hamburgerColor = isOpen ? '#fff' : (location.pathname.includes('gallery') ? '#fff' : '#000');
+  const hamburgerColor = isOpen ? 'white' : (location.pathname.includes('gallery') ? 'white' : 'white');
   return (
     <div className="navbar">
       <div className='Nav-logo'>
         <img className="tedx-logo" src={navLogo} alt=''/>
         {isMobile && (
       <div className="fixed-hamburger">
-        <Hamburger size={44} color={hamburgerColor} toggled={isOpen} toggle={handleHamburgerClick} />
+        <CgMenuLeftAlt size={40} color={hamburgerColor} toggled={isOpen} toggle={handleHamburgerClick} />
       </div>
     )}
       </div>
