@@ -49,21 +49,21 @@ export default function Header(props){
             <h1 className='h1_heading_container'>
                 <span className='meet_our_team-heading_words meet_our_team-meet' >
                     {
-                        'Meet'.split('').map((word) => {
+                        'MEET'.split('').map((word) => {
                             return word === '' ? <div className='word'>&nbsp;</div> : <div className='word'>{word}</div>
                         })
                     }
                 </span>
                 <span className='meet_our_team-heading_words meet_our_team-our'  >
                 {
-                    'Our'.split('').map((word) => {
+                    'OUR'.split('').map((word) => {
                         return word === '' ? <div className='word'>&nbsp;</div> : <div className='word'>{word}</div>
                     })
                 }
                 </span>
                 <span className='meet_our_team-heading_words meet_our_team-team'>
                 {
-                    'Team'.split('').map((word) => {
+                    'TEAM'.split('').map((word) => {
                         return word === '' ? <div className='word'>&nbsp;</div> : <div className='word'>{word}</div>
                     })
                 }

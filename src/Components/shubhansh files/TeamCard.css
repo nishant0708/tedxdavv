@@ -3,7 +3,8 @@
 }
 
 .teams-card{
-    background: #565555;
+    background: #ffffff13;
+    backdrop-filter: blur(8px);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -14,6 +15,7 @@
     margin: 30px;
     opacity: 1;
     scale: 1;
+    border: 1px solid white;
     box-shadow: 1px 2px 20px 5px rgba(0, 0, 20, 0.539);
     border-radius: 18px;
 }
@@ -24,11 +26,11 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgb(40, 40, 40, 0.8);
+    background: rgba(255, 255, 255, 0.288);
     transform: scaleY(0); 
     transform-origin: center;
     transition: all 0.6s; 
-    z-index: 30;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,6 +84,8 @@
     transition-timing-function:ease-in-out;
     border-radius: 20px;
     z-index: 30;
+    filter: sepia(60%) contrast(70%) contrast(170%) saturate(200%) hue-rotate(320deg);
+    /* filter: saturate(20%); */
 }
 .member-image{
     position: relative;

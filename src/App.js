@@ -80,7 +80,8 @@ function App() {
               <Route path='/' element={<Main />} />
               <Route path='/gallery' element={<HeroParallax products={productsData} />} />
               <Route path='/sponsors' element={<Subh />} />
-              <Route path='/teams' element={<TeamSection />} />
+              <Route path='/teams-2024' element={<TeamSection />} />
+              <Route path='/teams-2023' element={<TeamSection />} />
             </Routes>
             </Layout>
             <Footer />
