@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./frontpage2025.css";
+import About from "../../2025-Components/About/About";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,7 +67,7 @@ const FrontPage2025 = ({ onScaleComplete }) => {
     const xOffset = (zeroBounds.left + zeroBounds.width / 2) - (containerBounds.left + containerBounds.width / 2);
     const yOffset = (zeroBounds.top + zeroBounds.height / 2) - (containerBounds.top + containerBounds.height / 2);
 
-    const leftOffset = 30;
+    const leftOffset = 40;
 
     timeline.to(containerRef.current, {
       scale: 30,
@@ -74,7 +75,9 @@ const FrontPage2025 = ({ onScaleComplete }) => {
       duration: 1.5,
       ease: "power2.inOut",
       transformOrigin: `${50 + ((xOffset - leftOffset) / containerBounds.width) * 100}% ${50 + (yOffset / containerBounds.height) * 100}%`,
-      onComplete: () => onScaleComplete && onScaleComplete()
+      onComplete: () => < frontpage2025 onScaleComplete ={() => {
+        <About/>
+      }} />
     });
 
     return () => {

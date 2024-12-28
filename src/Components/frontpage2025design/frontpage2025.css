@@ -146,6 +146,13 @@
   z-index: 3;
 }
 
+.text25 {
+  opacity: 1; /* Ensure text is visible */
+  visibility: visible; /* Prevent it from being hidden */
+}
+
+
+
 @keyframes marqueeAnimation {
   0% {
     mask-position: 100% 0;
