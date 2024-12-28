@@ -70,11 +70,7 @@ const Navbar = () => {
   const handleHamburgerClick = () => {
     setOpen(!isOpen);
     
-    if (!isOpen) {
-      menuRef.current.style.display = 'flex';
-    } else {
-      menuRef.current.style.display = 'hidden';
-    }
+   
   };
 
   const scrollToTop = () => {
@@ -119,7 +115,7 @@ const Navbar = () => {
       <div className='Nav-logo'>
         <img className="tedx-logo" src={navLogo} alt=''/>
         {isMobile && (
-      <div className="fixed-hamburger">
+      <div className="fixed-hamburger"  onClick={handleHamburgerClick}>
         <CgMenuLeftAlt size={40} color={hamburgerColor} toggled={isOpen} toggle={handleHamburgerClick} />
       </div>
     )}
