@@ -6,8 +6,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import linkedin from "../Assests/Images/linkedin.png";
 import instagram from "../Assests/Images/instagram (2).png";
-import badal from "../Assests/Images/Group 29.png";
-
+import badal from "../../Images/Group 83.svg";
+import badal2 from "../../Images/Group 84.svg";
 const SliderComponent = () => {
   const progressBarRef = useRef(null);
   const [showTitle, setShowTitle] = useState(false);
@@ -40,10 +40,11 @@ const SliderComponent = () => {
       start: "Top 80%",
       onUpdate: (self) => {
         // Scroll percentage
+      
         scrollPerc = round(
           (window.scrollY / (slider.offsetHeight - window.innerHeight)) * 100,
           2
-        );
+        )-80;
         sliderStyles.setProperty("--scroll-perc", scrollPerc);
         velocity = clamp(self.getVelocity() / -300);
         if (Math.abs(velocity) > Math.abs(proxy.velocity)) {
@@ -332,7 +333,7 @@ const SliderComponent = () => {
 
     return (
       <li className={`o-slider__item ${speakerNameClass}`}>
-        <img className="o-slider__img" src={image} alt="" ref={imgRef} />
+        <div className="speaker_img_container"><img className="o-slider__img" src={image} alt="" ref={imgRef} /></div>
         <p className="slider__desc" ref={descRef}>
           {description}
         </p>
@@ -420,123 +421,19 @@ const SliderComponent = () => {
       });
     
   };
-  useEffect(() => {
-    const options = {
-      threshold: 0.0001
-    };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const badal = document.querySelector('.badal1');
-        const title = document.querySelector('.o-slider__title');
-        const year = document.querySelector('.year-drop');
-        const progress = document.querySelector('.progress-bar');
-
-        if (entry.isIntersecting) {
-          // When slider enters viewport
-          gsap.to(badal, {
-            position: 'fixed',
-            duration: 0.5,
-            ease: "power2.inOut",
-            opacity: 1,
-         
-          });
-          
-          gsap.to(title, {
-            position: 'fixed',
-            duration: 0.5,
-            ease: "power2.inOut",
-            opacity: 1,
-           
-          });
-
-          gsap.to(year, {
-            position: 'fixed',
-            duration: 0.5,
-            ease: "power2.inOut",
-            opacity: 1,
-           
-          });
-
-          gsap.to(progress, {
-            position: 'fixed',
-            duration: 0.5,
-            ease: "power2.inOut",
-            opacity: 1,
-            bottom: 0,
-            left: 0
-          });
-        } else {
-          // When slider exits viewport
-          gsap.to(badal, {
-            position: 'absolute',
-            duration: 0.5,
-            ease: "power2.inOut",
-            
-          });
-          
-          gsap.to(title, {
-            position: 'absolute',
-            duration: 0.5,
-            ease: "power2.inOut",
-            
-          });
-
-          gsap.to(year, {
-            position: 'absolute',
-            duration: 0.5,
-            ease: "power2.inOut",
-            
-          });
-
-         
-        }
-      });
-    }, options);
-
-    // Add initial styles
-    gsap.set('.badal1', {
-      opacity: 0,
-      y: 20,
-      position: 'absolute'
-    });
-    
-    gsap.set('.o-slider__title', {
-      opacity: 0,
-      y: 20,
-      position: 'absolute'
-    });
-
-    gsap.set('.year-drop', {
-      opacity: 0,
-
-      position: 'absolute',
-      
-    });
-
-   
-
-    const slider = document.getElementById('slider');
-    if (slider) {
-      observer.observe(slider);
-    }
-
-    // Cleanup
-    return () => {
-      if (slider) {
-        observer.unobserve(slider);
-      }
-    };
-  }, []);
 
   // console.log("Selected Year:", selectedYear);
 
   return (
     <div id="slider" className="o-slider" ref={sliderRef}>
-
-      <div className="badal1">
-        <img src={badal} className=".badal" />
+    <div className="landing_2025_stars"></div>
+      {/* <div className="badal1">
+        <img src={badal} className="badal" />
       </div>
+      <div className="badal2">
+        <img src={badal2} className="badal" />
+      </div> */}
       <h1
         className={`o-slider__title ${
           selectedYear === "2024" ? "o-slider__title-2024" : ""
