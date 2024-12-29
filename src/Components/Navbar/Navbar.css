@@ -7,7 +7,7 @@
     background-color: transparent;
     padding-top: 15px;
     align-items: center;
-    z-index: 5555555555555;
+    z-index: 1000 !important;
 }
 .nav-logo{
     display: flex;

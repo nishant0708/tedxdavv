@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import Speakerf from '../nik-pages/Speakerf'
 
@@ -13,7 +13,10 @@ import About from '../../2025-Components/About/About'
 // import Mehnat from "../jay mc/Mehnat";
 
 const Main = () => {
-    
+     useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+     
   return (
     <div>
 
