@@ -2,6 +2,10 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./frontpage2025.css";
+import About from "../../2025-Components/About/About";
+import SideMarquee2 from "../../2025-Components/sidemarquee2/sidemarquee2";
+import TypePara from "../../2025-Components/TypePara/TypePara";
+import TypePara2 from "../../2025-Components/typepara2/typepara2";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,7 +37,7 @@ const FrontPage2025 = ({ onScaleComplete }) => {
     timeline.fromTo(
       yearRef.current,
       { scale: 0.5, opacity: 0 },
-      { scale: 1, opacity: 1, duration: 1, ease: "power2.out" },
+      { scale: 1, opacity: 1, duration: 3, ease: "power2.out" },
       "<"
     );
 
@@ -66,7 +70,7 @@ const FrontPage2025 = ({ onScaleComplete }) => {
     const xOffset = (zeroBounds.left + zeroBounds.width / 2) - (containerBounds.left + containerBounds.width / 2);
     const yOffset = (zeroBounds.top + zeroBounds.height / 2) - (containerBounds.top + containerBounds.height / 2);
 
-    const leftOffset = 30;
+    const leftOffset = 40;
 
     timeline.to(containerRef.current, {
       scale: 30,
@@ -74,7 +78,9 @@ const FrontPage2025 = ({ onScaleComplete }) => {
       duration: 1.5,
       ease: "power2.inOut",
       transformOrigin: `${50 + ((xOffset - leftOffset) / containerBounds.width) * 100}% ${50 + (yOffset / containerBounds.height) * 100}%`,
-      onComplete: () => onScaleComplete && onScaleComplete()
+      onComplete: () => < frontpage2025 onScaleComplete ={() => {
+        <About/>
+      }} />
     });
 
     return () => {
@@ -95,33 +101,38 @@ const FrontPage2025 = ({ onScaleComplete }) => {
       });
     };
 
-    const interval = setInterval(addBlinkingEffect, 2500);
+    const interval = setInterval(addBlinkingEffect, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="main-container25">
+      
       <div ref={containerRef} className="frontpage-container25">
+       
+      <SideMarquee2/>
+
+      <div className="landing_2025_stars"></div>
         <div className="line-overlay25"></div>
         <div className="columns-container25">
           <div className="column25">
-            <p ref={el => (textRefs.current[0] = el)} className="text25">
-              CAPTURING THE CONNECTION BETWEEN THE SEEN AND THE UNSEEN
-            </p>
+            <span ref={el => (textRefs.current[0] = el)} className="text25">
+             <TypePara2 para="CAPTURING THE CONNECTION BETWEEN THE SEEN AND THE UNSEEN"/>
+            </span>
           </div>
           <div className="column25">
             <p ref={el => (textRefs.current[1] = el)} className="text25">
               <div className="text2">
-                SNAPSHOTS OF IDEAS THAT RESONATED WITHIN AND BEYOND
+               <TypePara2 para="SNAPSHOTS OF IDEAS THAT RESONATED WITHIN AND BEYOND"/>
               </div>
             </p>
           </div>
           <div className="column25 combined-column25">
             <p ref={el => (textRefs.current[2] = el)} className="text25">
-              UNMASKING THE HIDDEN TRUTHS THROUGH WORDS THAT INSPIRE
+             <TypePara2 para="UNMASKING THE HIDDEN TRUTHS THROUGH WORDS THAT INSPIRE"/>
             </p>
             <p ref={el => (textRefs.current[3] = el)} className="text25">
-              OUR SPEAKERS SHARE STORIES THAT IGNITE YOUR INNER JOURNEY
+             <TypePara2 para="OUR SPEAKERS SHARE STORIES THAT IGNITE YOUR INNER JOURNEY"/>
             </p>
           </div>
         </div>

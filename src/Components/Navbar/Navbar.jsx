@@ -113,7 +113,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className='Nav-logo'>
-        <img className="tedx-logo" src={navLogo} alt=''/>
+        <img loading="lazy" className="tedx-logo" src={navLogo} alt=''/>
         {isMobile && (
       <div className="fixed-hamburger"  onClick={handleHamburgerClick}>
         <CgMenuLeftAlt size={40} color={hamburgerColor} toggled={isOpen} toggle={handleHamburgerClick} />

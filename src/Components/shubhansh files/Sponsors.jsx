@@ -26,7 +26,7 @@ export default function Sponsors(props){
     //console.log(img);
     return(
         <div className='shubh-sponsor-card'>
-            <img className='shubh-sponsor-image ' src={img}></img>
+            <img loading="lazy" className='shubh-sponsor-image ' src={img}></img>
         </div>
     )
 }

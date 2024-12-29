@@ -96,7 +96,7 @@ if (isMobile){
     return (
         <div className="heropg" ref={containerRef}>
             <div className="lineimg">
-                <img ref={imgRef} src="./Black.png" alt="lines"
+                <img loading="lazy" ref={imgRef} src="./Black.png" alt="lines"
                     // style={{ opacity: 0 }}
                     style={{ opacity: opacity }}
 
@@ -129,11 +129,11 @@ if (isMobile){
                     <div className='flower'>
                         <div id='herowhiteflower' className="herowhiteflower">
 
-                            <img src={white} />
+                            <img loading="lazy" src={white} />
                         </div>
                         <div ref={redflowerRef} id='heroredflower' className="heroredflower">
 
-                            <img src={red} />
+                            <img loading="lazy" src={red} />
                         </div>
                         <div className="heroyellow2"><hr id="heroyellow2"></hr></div>
                     </div>
@@ -142,7 +142,7 @@ if (isMobile){
                     Discover your inner strife with <br /> <span className='bold'>TEDxDAVV : ThoughtLoom </span>
                 </div>
                 <div className="tedxlogo">
-                    <img src='/tedxlogo/logo-black.png' alt='tedxlogoblack' />
+                    <img loading="lazy" src='/tedxlogo/logo-black.png' alt='tedxlogoblack' />
                 </div>
             </div>
         </div>

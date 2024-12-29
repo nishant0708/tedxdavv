@@ -185,7 +185,7 @@ export const ProductCard = ({ product, translate }) => {
         href='javascript:void(0)'
         className="block rounded-xl group-hover/product:shadow-2xl"
       >
-        <img
+        <img loading="lazy"
           src={product.thumbnail}
           height="600"
           width="600"

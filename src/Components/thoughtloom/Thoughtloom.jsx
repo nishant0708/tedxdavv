@@ -72,7 +72,7 @@ const Thoughtloom = () => {
         <div className='svg-container'>
           <div className='mask-box' ref={maskBoxRef}></div>
           <div className='rainbow'>
-            <img src={process.env.PUBLIC_URL + '/assets/other/rainbow.png'} alt="rainbow"></img>
+            <img loading="lazy" src={process.env.PUBLIC_URL + '/assets/other/rainbow.png'} alt="rainbow"></img>
           </div>
           <div className='svg-draw'>
             <div className='whiteStroke'>
@@ -85,12 +85,12 @@ const Thoughtloom = () => {
                 <circle cx="131.5" cy="131.5" r="131.5" fill="#FFD116" fillOpacity="0.86" />
               </svg>
             </div>
-            <img className='person' src={process.env.PUBLIC_URL + '/assets/other/person.png'} alt="person"></img>
+            <img loading="lazy" className='person' src={process.env.PUBLIC_URL + '/assets/other/person.png'} alt="person"></img>
           </div>
           <div className='mask-box-2' ref={maskBox2Ref}></div>
         </div>
         <div className='thoughtloom-container'>
-          <img src={process.env.PUBLIC_URL + '/assets/other/thoughtloom.png'}></img>
+          <img loading="lazy" src={process.env.PUBLIC_URL + '/assets/other/thoughtloom.png'}></img>
         </div>
         <div className='second-trigger'></div>
         <div className="container">
