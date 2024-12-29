@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+
 
 const TypePara2 = (props) => {
     const typeParaRef = useRef(null);
@@ -13,6 +13,7 @@ const TypePara2 = (props) => {
     const [shouldStartTyping, setShouldStartTyping] = useState(false);
 
     useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
         if (!hasParaPlayed) {
             const animation = gsap.fromTo(
                 typeParaRef.current,
@@ -25,7 +26,7 @@ const TypePara2 = (props) => {
                         trigger: typeParaRef.current,
                         start: 'top 5%',
                         scrub: false,
-                        markers: true,
+                        markers: false,
                         toggleActions: 'play none none none', // Ensure it plays only once
                         onEnter: () => {
                             setHasParaPlayed(true); // Mark as played on enter

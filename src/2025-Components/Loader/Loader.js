@@ -4,27 +4,13 @@ import './loader.css'
 
 export default function Loader() {
   useEffect(() => {
-    // Function to add 'loaded' class to body when DOM content is loaded
-    const handleDOMContentLoaded = () => {
-      document.querySelector('body').classList.add('loaded')
-    }
-
-    // Check if DOMContentLoaded event has already occurred
-    if (document.readyState === 'complete') {
-      handleDOMContentLoaded()
-    } else {
-      // Add event listener for DOMContentLoaded
-      document.addEventListener('DOMContentLoaded', handleDOMContentLoaded)
-    }
-
-    // Set a timeout to add 'loaded' class after 1500ms as a fallback
+    // Function to add 'loaded' class to body after 4 seconds
     const timeoutId = setTimeout(() => {
       document.querySelector('body').classList.add('loaded')
-    }, 4000)
+    }, 4000) // Ensures the loader runs for 4 seconds
 
-    // Clean up: remove event listener and clear timeout
+    // Clean up: clear timeout if the component unmounts
     return () => {
-      document.removeEventListener('DOMContentLoaded', handleDOMContentLoaded)
       clearTimeout(timeoutId)
     }
   }, [])

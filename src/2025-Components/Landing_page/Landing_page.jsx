@@ -69,6 +69,7 @@ useEffect(() => {
           pin: true,
           scrub: 1,
           anticipatePin: 1,
+         
           onLeave: () => {
             ScrollTrigger.refresh();
           },
@@ -213,7 +214,7 @@ useEffect(() => {
     }, 250);
 
     window.addEventListener("resize", resizeHandler);
-
+      
     return () => {
       if (currentTimeline.scrollTrigger) {
         currentTimeline.scrollTrigger.kill();
