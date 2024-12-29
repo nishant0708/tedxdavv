@@ -6,7 +6,7 @@ const Buy = () => {
   return (
     <div className='buy'>
       <a href='https://insider.in/tedxdavv-mar7-2024/event'><p className='buynowbut'>
-        <img className="buyimg" src={buytick} alt='' />
+        <img loading="lazy" className="buyimg" src={buytick} alt='' />
       </p> </a>
     </div>
   );

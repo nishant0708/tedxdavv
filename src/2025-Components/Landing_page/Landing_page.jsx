@@ -227,7 +227,7 @@ useEffect(() => {
     <div className="landing_2025_main">
       <SideMarquee isRight={true} />
       <div className="landing_2025_stars"></div>
-      <img src={galaxy} alt="galaxy" className="galaxy2025" />
+      <img loading="lazy"  src={galaxy} alt="galaxy" className="galaxy2025" />
       <div className="landing_2025_Contents">
         <div className="landing_2025_Contents-left">
           <div className="line_20251">
@@ -249,8 +249,8 @@ useEffect(() => {
           </p>
           <div className="line_20253">
             <div className="Eye_main">
-              <img src={eye} className="eye2025" alt="galaxy" />
-              <img src={eyeball} alt="galaxy" className="eyeball2025" />
+              <img loading="lazy" src={eye} className="eye2025" alt="galaxy" />
+              <img loading="lazy" src={eyeball} alt="galaxy" className="eyeball2025" />
             </div>
             SHAD<span className="blink-letter">O</span>W
           </div>

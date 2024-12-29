@@ -21,14 +21,14 @@ const Thoughtloom2 = () => {
           Indore</pre>
       </div>
 
-      <img className='rainbow_img shift' src='https://imgur.com/w81ZkLh.png'></img>
+      <img loading="lazy" className='rainbow_img shift' src='https://imgur.com/w81ZkLh.png'></img>
 
       
-      <img className='thought_loom_img' src='https://imgur.com/SXty7kU.png'></img>
+      <img loading="lazy" className='thought_loom_img' src='https://imgur.com/SXty7kU.png'></img>
 
-      <img className='white_light shift' src='https://imgur.com/QMVLPsi.png'></img>
+      <img loading="lazy" className='white_light shift' src='https://imgur.com/QMVLPsi.png'></img>
       <div className='boy-animation shift'>
-        <img className='boy-image' src='https://imgur.com/fN0NV9J.png' alt="person"></img>
+        <img loading="lazy" className='boy-image' src='https://imgur.com/fN0NV9J.png' alt="person"></img>
       </div>
     </div>
   );
