@@ -24,7 +24,39 @@ function debounce(func, wait) {
 }
 
 const Landing_page = () => {
+
+       useEffect(() => {
+          window.scrollTo(0, 0);
+        }, []);
+       
   const pathRef = useRef(null);
+  window.addEventListener('DOMContentLoaded', () => {
+    const element = document.querySelector('.person2025');
+    console.log("check");
+    // Listen for the animation end event
+    element.addEventListener('animationend', () => {
+        // Remove the animation style or class
+      
+        element.style.animation = 'none';
+    });
+});
+
+useEffect(() => {
+  const element = document.querySelector('.person2025');
+  if (element) {
+    const handleAnimationEnd = () => {
+      element.style.animation = 'none';
+    };
+
+    element.addEventListener('animationend', handleAnimationEnd);
+
+    // Cleanup the event listener
+    return () => {
+      element.removeEventListener('animationend', handleAnimationEnd);
+    };
+  }
+}, []);
+
 
   useEffect(() => {
     const updateAnimation = () => {
@@ -37,6 +69,7 @@ const Landing_page = () => {
           pin: true,
           scrub: 1,
           anticipatePin: 1,
+         
           onLeave: () => {
             ScrollTrigger.refresh();
           },
@@ -181,7 +214,7 @@ const Landing_page = () => {
     }, 250);
 
     window.addEventListener("resize", resizeHandler);
-
+      
     return () => {
       if (currentTimeline.scrollTrigger) {
         currentTimeline.scrollTrigger.kill();

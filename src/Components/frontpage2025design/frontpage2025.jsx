@@ -7,7 +7,7 @@ import SideMarquee2 from "../../2025-Components/sidemarquee2/sidemarquee2";
 import TypePara from "../../2025-Components/TypePara/TypePara";
 import TypePara2 from "../../2025-Components/typepara2/typepara2";
 
-gsap.registerPlugin(ScrollTrigger);
+
 
 const FrontPage2025 = ({ onScaleComplete }) => {
   const containerRef = useRef(null);
@@ -16,13 +16,17 @@ const FrontPage2025 = ({ onScaleComplete }) => {
   const taglineRef = useRef();
   const zeroRef = useRef();
 
+
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
         end: "+=2000",
         scrub: true,
+        
         pin: true,
         onLeave: () => onScaleComplete && onScaleComplete(),
       },
@@ -82,8 +86,10 @@ const FrontPage2025 = ({ onScaleComplete }) => {
         <About/>
       }} />
     });
-
+    ScrollTrigger.refresh();
     return () => {
+      // Clear all GSAP animations and ScrollTrigger instances
+      timeline.kill();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, [onScaleComplete]);

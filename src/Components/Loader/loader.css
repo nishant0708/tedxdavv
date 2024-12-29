@@ -1,4 +1,4 @@
-.loader-container {
+/* .loader-container {
   width: 100vw;
   height: 100vh;
   background-color: #eb0028;
@@ -22,7 +22,7 @@
   /* Remove font-size and font-weight properties */
   /* font-size: 20rem;
   font-weight: bold; */
-  color: #eae6e6;
+  /* color: #eae6e6;
 }
 
 .loading-icon.zoom {
@@ -32,10 +32,10 @@
 
 .svg-icon {
   /* Add any styling you want for the SVG */
-  width: 30vw; /* Adjust according to your SVG size */
-  height: 30vh; /* Adjust according to your SVG size */
-  fill: #eae6e6; /* Change fill color if needed */
-}
+  /* width: 30vw; /* Adjust according to your SVG size */
+  /* height: 30vh; /* Adjust according to your SVG size */
+  /* fill: #eae6e6; /* Change fill color if needed */
+/* }
 
 @keyframes zoomOut {
   0% {
@@ -44,4 +44,4 @@
   100% {
     transform: scale(800);
   }
-}
+} */ 

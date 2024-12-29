@@ -1,7 +1,7 @@
 
 import './App.css';
 
-import Loader from './Components/Loader/Loader';
+import Loader from './2025-Components/Loader/Loader';
 import Footer from './Components/Footer/Footer';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Changed import statement
@@ -15,10 +15,10 @@ import Subh from "./Components/Subhanshpage/Subh";
 import React, { useState, useEffect } from 'react';
 import Buy from './Components/Buynow/Buy';
 import Layout from './Components/Buynow/Layout';
+import ScrollToTop from './ScrollToTop';
 
 function App() {
-  const [showLoader, setShowLoader] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
+
   const productsData = [
     { title: '', link: '', thumbnail: "https://imgur.com/otCQ1nD.png" },
     { title: '', link: '', thumbnail: "https://imgur.com/QEeDovI.png" },
@@ -47,33 +47,19 @@ function App() {
     { title: 'Akshay Singh', link: '', thumbnail: "https://imgur.com/L2tS0Cz.png" },
     // Add more product data as needed
   ];
-  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
  
   
-  useEffect(() => {
-    // Simulate loading time for 5 seconds
-    const loadingTimeout = setTimeout(() => {
-      setIsLoaded(true);
-      setShowLoader(false);
-    }, 6);
 
-    // Check if content is loaded before the timeout
-    window.onload = () => {
-      setIsLoaded(true);
-      // clearTimeout(loadingTimeout); // Cancel the timeout if content is loaded
-    };
-
-    // Clean up
-    return () => clearTimeout(loadingTimeout);
-  }, []);
 
   return (
     <div className="App">
-      {showLoader && <Loader />} {/* Show Loader component if showLoader is true */}
-      {!isLoaded && !showLoader && <Loader />} {/* Show Loader component until resources are loaded */}
-      {isLoaded && !showLoader && (
+       <Loader/>
         <div className='hey'>
           <Router>
+          <ScrollToTop/>
             <Navbar />
             <Layout>
             <Routes>
@@ -87,7 +73,7 @@ function App() {
             <Footer />
           </Router>
         </div>
-      )}
+      
     </div>
   );
 }
