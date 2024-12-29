@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Marquee from "react-fast-marquee";
 
 import SponsorData from '../../Sponors.json';
-
+import galaxy from '../../Images/landing2025_milky.png'
 gsap.registerPlugin(ScrollTrigger);
 
  function SponsorMobileSection(){
@@ -84,7 +84,9 @@ gsap.registerPlugin(ScrollTrigger);
     
     return(
         <div className='sponsor-wrapper-Mobile' ref={sponsorTriggerRefMobile}>
+ <img loading="lazy"  src={galaxy} alt="galaxy" className="galaxy2025" />
            <div className='sponsor-heading-Mobile-container'>
+             
                 <h1 className='sponsor-heading-Mobile'>
                         {
                             'Sponsors'.split('').map((word) => {
