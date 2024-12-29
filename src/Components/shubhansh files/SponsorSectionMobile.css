@@ -19,6 +19,7 @@
 }
 
 .sponsor-heading-Mobile-container{
+    margin-top: 500px;
     position: absolute;
     display: flex;
     width: 340px;
@@ -29,6 +30,7 @@
     left: 50%;
     row-gap: 1vh;
     margin: 40px auto;
+    margin-top: 40vh;
     margin-left: -170px;
 }
 
@@ -42,6 +44,7 @@
     padding: 0%;
     width: auto;
     margin: -20px 0px 0px 0px;
+  
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     display: flex;
     flex-direction: row;
