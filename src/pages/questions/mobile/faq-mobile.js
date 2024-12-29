@@ -29,11 +29,11 @@ const StickyScroll2 = ({ content }) => {
     <div>
       <div  className={styles.hero}>
         <div className={styles.background}>
-          <img  src={bg}></img>
+          <img loading="lazy"  src={bg}></img>
         </div>
         
         <div id="faq" className={styles.faq}>
-          <img src={faq} alt="FAQs" />
+          <img loading="lazy" src={faq} alt="FAQs" />
         </div>
 
         <div id="questions" >

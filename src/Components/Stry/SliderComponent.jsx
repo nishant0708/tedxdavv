@@ -333,7 +333,7 @@ const SliderComponent = () => {
 
     return (
       <li className={`o-slider__item ${speakerNameClass}`}>
-        <div className="speaker_img_container"><img className="o-slider__img" src={image} alt="" ref={imgRef} /></div>
+        <div className="speaker_img_container"><img loading="lazy" className="o-slider__img" src={image} alt="" ref={imgRef} /></div>
         <p className="slider__desc" ref={descRef}>
           {description}
         </p>
@@ -346,13 +346,13 @@ const SliderComponent = () => {
           <span className="log">
             {instagramLink && (
               <a href={instagramLink}>
-                <img /*style={{ width: "35px" }}*/ src={instagram} alt="" />
+                <img loading="lazy" /*style={{ width: "35px" }}*/ src={instagram} alt="" />
               </a>
             )}
             &nbsp;
             {linkedinLink && (
               <a href={linkedinLink}>
-                <img /*style={{ width: "35px" }}*/ src={linkedin} alt="" />
+                <img loading="lazy" /*style={{ width: "35px" }}*/ src={linkedin} alt="" />
               </a>
             )}
           </span>
@@ -429,10 +429,10 @@ const SliderComponent = () => {
     <div id="slider" className="o-slider" ref={sliderRef}>
     <div className="landing_2025_stars"></div>
       {/* <div className="badal1">
-        <img src={badal} className="badal" />
+        <img loading="lazy" src={badal} className="badal" />
       </div>
       <div className="badal2">
-        <img src={badal2} className="badal" />
+        <img loading="lazy" src={badal2} className="badal" />
       </div> */}
       <h1
         className={`o-slider__title ${

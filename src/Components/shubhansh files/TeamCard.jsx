@@ -90,7 +90,7 @@ export default function TeamCard(props){
                 </div>
                 
                 <div className='member-image-container'>
-                    <img src={props.img} className='member-image'></img>
+                    <img loading="lazy" src={props.img} className='member-image'></img>
                 </div>
 
                 <p ref={cardRef} className='team-card-info'>

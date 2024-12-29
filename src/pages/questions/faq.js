@@ -271,7 +271,7 @@ useEffect(() => {
             )}
           </div>
           <div id="faq" className="faq">
-          <img src={faq} alt="FAQs" />
+          <img loading="lazy" src={faq} alt="FAQs" />
         </div>
           <div id="lastelem" className="w-10 h-10  translate-y-52 absolute z-40"></div>    
         </div>

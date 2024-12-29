@@ -191,7 +191,7 @@ export const ProductCard = ({ product, translate }) => {
           href='javascript:void(0)'
           className="block opacity-100 group-hover/product:shadow-2xl"
         >
-          <img
+          <img loading="lazy"
             src={product.thumbnail}
             height="600"
             width="600"
@@ -224,7 +224,7 @@ export const ProductCard = ({ product, translate }) => {
           href='javascript:void(0)'
           className="block opacity-100 group-hover/product:shadow-2xl"
         >
-          <img
+          <img loading="lazy"
             src={product.thumbnail}
             height="400"
             width="700"
