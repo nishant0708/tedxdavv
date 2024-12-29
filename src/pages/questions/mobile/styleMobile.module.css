@@ -2,7 +2,7 @@
     position: relative;
     height: fit-content;
     width: 100vw;
-    background-color: #eae6e6;
+    background-color: #000000;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -31,6 +31,7 @@
     z-index: 3;
     scale: 1.6;
     height: 100vh;
+    /* background-color: white; */
 }
 
 .Question {
@@ -42,7 +43,7 @@
     padding: 0 20px;
     
     z-index: 4;
-    background-color: rgba(61, 60, 60, 0.47);
+    background-color: rgb(255, 255, 255);
     text-align: center;
     border-radius: 10px;
     text-wrap: pretty;
@@ -53,6 +54,10 @@
 .Question select {
     height: 80px;
     width: 80vw;
+}
+select:focus-visible{
+    outline: none;
+    color: black;
 }
 
 .Answers {
@@ -65,11 +70,11 @@
     text-align: center;
     margin: 10%;
     margin-top: 0;
-    border: 12px solid rgb(250, 214, 72);
+    border: 12px solid rgb(0, 0, 0);
     border-radius: 20px;
     width: 80%;
     padding: 20px 0px;
-    color: black;
+    color: rgb(255, 255, 255);
     height: 30vh;
     font-weight: 600;
 }
@@ -89,4 +94,23 @@
     aspect-ratio: 1;
     border-radius: 40px;
     object-fit: cover;
+}
+
+.mgif {
+    width: 75vw;
+    height: 25vh;
+}
+
+.mtopBGif {
+    width: 75vw;
+    height: 25vh;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 17%,
+        rgba(0, 0, 0, 0) 84%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    position: absolute;
 }
