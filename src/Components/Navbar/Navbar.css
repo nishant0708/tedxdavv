@@ -16,7 +16,7 @@
     width: 20px;
 }
 .tedx-logo{
-    width: 100px;
+    width: 150px;
 }
 
 .nav-logo p{
@@ -154,7 +154,7 @@
         font-weight: bold;
     }
     .tedx-logo{
-        display: none;
+        width: 100px;
     }
     .nav-menu li span{
         color: white;
@@ -195,7 +195,7 @@
         gap: 1vh;
     }
     .tedx-logo{
-       display: none;
+       width: 150px ;
     }
     .Nav-logo{
         display: flex;
