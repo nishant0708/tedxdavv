@@ -6,6 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Breakpoint, BreakpointProvider } from "react-socks";
 import StickyScroll2 from "./mobile/faq-mobile";
 import gif from "./FAQ.gif";
+import { TypeAnimation } from "react-type-animation";
+// import TypePara from "../../2025-Components/TypePara/TypePara";
 
 const StickyScroll = ({ content }) => {
     gsap.registerPlugin(ScrollTrigger);
@@ -43,7 +45,7 @@ const StickyScroll = ({ content }) => {
         });
     }, []);
 
-    useEffect(()=> {
+    useEffect(() => {
         gsap.fromTo(
             "#fgif",
             {
@@ -58,7 +60,7 @@ const StickyScroll = ({ content }) => {
                 },
             }
         );
-    })
+    });
 
     useEffect(() => {
         const tween = gsap.to("#answers", {
@@ -72,7 +74,6 @@ const StickyScroll = ({ content }) => {
             },
         });
     }, []);
-
 
     useEffect(() => {
         // Animate buttons one by one
@@ -154,7 +155,10 @@ const StickyScroll = ({ content }) => {
                         <div id="Page" className="hero">
                             <div className="left">
                                 <div className="trigger absolute z-50 w-3 h-1"></div>
-                                <div id="fgif" className="flex flex-col items-center py-24">
+                                <div
+                                    id="fgif"
+                                    className="flex flex-col items-center py-24"
+                                >
                                     <div className="topBGif"></div>
                                     <img
                                         src={gif}
@@ -167,14 +171,34 @@ const StickyScroll = ({ content }) => {
                                     {selectedQuestionIndex !== null && (
                                         <h3 className="faq-answers">
                                             {
-                                                content[selectedQuestionIndex]
-                                                    .description
+                                                // content[selectedQuestionIndex]
+                                                // .description
+
                                             }
+                                                <TypeAnimation
+                                                    key={selectedQuestionIndex}
+                                                    sequence={[content[selectedQuestionIndex].description]}
+                                                    wrapper="span"
+                                                    speed={80}
+                                                    style={{
+                                                        whiteSpace: "pre-line",
+                                                        display: "inline-block",
+                                                        textAlign: "justify",
+                                                    }}
+                                                    repeat={0}
+                                                    cursor={false}
+                                                />
+                                                
+                                            
                                         </h3>
                                     )}
                                 </div>
                                 <div id="faq" className="faq">
-                                    <img src={faq} alt="FAQs" className="w-[25vw]" />
+                                    <img
+                                        src={faq}
+                                        alt="FAQs"
+                                        className="w-[25vw]"
+                                    />
                                 </div>
                                 {/* <div
                                     id="lastelem"
