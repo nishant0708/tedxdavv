@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import "./Navbar.css";
 import logoblack from '../Assests/Images/logo-black 1.png';
-import Hamburger from 'hamburger-react';
+import { CgMenuLeftAlt } from "react-icons/cg";
 import { Link, useLocation } from 'react-router-dom';
 
 import logowhite from "../Assests/Images/logo-white 1.png"
@@ -70,11 +70,7 @@ const Navbar = () => {
   const handleHamburgerClick = () => {
     setOpen(!isOpen);
     
-    if (!isOpen) {
-      menuRef.current.style.display = 'flex';
-    } else {
-      menuRef.current.style.display = 'hidden';
-    }
+   
   };
 
   const scrollToTop = () => {
@@ -113,14 +109,14 @@ const Navbar = () => {
   //     setNavLogo(logoblack); // Reset logo to the default logo
   //   }
   };
-  const hamburgerColor = isOpen ? '#fff' : (location.pathname.includes('gallery') ? '#fff' : '#000');
+  const hamburgerColor = isOpen ? 'white' : (location.pathname.includes('gallery') ? 'white' : 'white');
   return (
     <div className="navbar">
       <div className='Nav-logo'>
         <img className="tedx-logo" src={navLogo} alt=''/>
         {isMobile && (
-      <div className="fixed-hamburger">
-        <Hamburger size={44} color={hamburgerColor} toggled={isOpen} toggle={handleHamburgerClick} />
+      <div className="fixed-hamburger"  onClick={handleHamburgerClick}>
+        <CgMenuLeftAlt size={40} color={hamburgerColor} toggled={isOpen} toggle={handleHamburgerClick} />
       </div>
     )}
       </div>
@@ -131,7 +127,7 @@ const Navbar = () => {
       <li onClick={() => handleMenuItemClick("home")} style={{ color: menu === "home" ? '#eb0028' : navTextColor, transition: "0.5s ease-out" }}><Link  style={{ textDecoration:'none',color: menu === "home" ? '#eb0028' : navTextColor, transition: "1s ease-out" }} to='/'><span  style={{ color: menu === "home" ? '#eb0028' : "", transition: "0.5s ease-out" }}>Home</span></Link> {menu === "home" ? <hr /> : <></>} </li>
         <li onClick={() => handleMenuItemClick("sponsors")} style={{ color: menu === "sponsors" ? '#eb0028' : navTextColor, transition: "0.5s ease-out" }}><Link  style={{ textDecoration:'none',color: menu === "sponsors" ? '#eb0028' : navTextColor, transition: "1s ease-out" }} to='/sponsors'><span style={{ color: menu === "sponsors" ? '#eb0028' : "", transition: "0.5s ease-out" }}>Sponsors</span></Link> {menu === "sponsors" ? <hr /> : <></>}</li>
         <li onClick={() => handleMenuItemClick("gallery")} style={{ color: menu === "gallery" ? '#eb0028' : navTextColor, transition: "0.5s ease-out" }}><Link  style={{ textDecoration:'none',color: menu === "gallery" ? '#eb0028' : navTextColor, transition: "1s ease-out" }} to='/gallery'><span style={{ color: menu === "gallery" ? '#eb0028' : "", transition: "0.5s ease-out" }}>Gallery</span></Link> {menu === "gallery" ? <hr /> : <></>}</li>
-        <li onClick={() => handleMenuItemClick("teams")} style={{ color: menu === "teams" ? '#eb0028' : navTextColor, transition: "0.5s ease-out" }}><Link  style={{ textDecoration:'none',color: menu === "teams" ? '#eb0028' : navTextColor, transition: "1s ease-out" }} to='/teams'><span onClick={handleReload}  style={{ color: menu === "teams" ? '#eb0028' : "", transition: "0.5s ease-out" }}>Our Team</span> </Link>{menu === "teams" ? <hr /> : <></>}</li>
+        <li onClick={() => handleMenuItemClick("teams")} style={{ color: menu === "teams" ? '#eb0028' : navTextColor, transition: "0.5s ease-out" }}><Link  style={{ textDecoration:'none',color: menu === "teams" ? '#eb0028' : navTextColor, transition: "1s ease-out" }} to='/teams-2024'><span onClick={handleReload}  style={{ color: menu === "teams" ? '#eb0028' : "", transition: "0.5s ease-out" }}>Our Team</span> </Link>{menu === "teams" ? <hr /> : <></>}</li>
         <li className='con' onClick={() => { handleMenuItemClick("contact"); window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }) }} style={{ color: menu === "contact" ? '#eb0028' :  navTextColor, transition: "1s ease-out", cursor: 'pointer' }}><span style={{ color: menu === "contact" ? '#eb0028' : "", transition: "0.5s ease-out" }}>Contact Us</span> {menu === "contact" ? <hr /> : <></>}</li>
       </ul>
     </div>

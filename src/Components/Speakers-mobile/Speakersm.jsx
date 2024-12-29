@@ -2,8 +2,8 @@ import React, { useEffect,useRef,useState } from 'react'
 import "./Speakersm.css"
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import mlinkedin from "../Assests/Images/linkedin (1).png";
-import instagram from "../Assests/Images/instagram (1).png";
+import mlinkedin from "../Assests/Images/linkedin.png";
+import instagram from "../Assests/Images/instagram (2).png";
 import samp_image from "../Assests/Images/rev.png"
 
 import badal from "../Assests/Images/Group 29.png"
@@ -342,12 +342,12 @@ const Speakersm = () => {
 
   return (
     <div id="mslider" class="o-mslider">
-  
+  <div className="landing_2025_stars"></div>
   <h1 className={`o-mslider__title ${selectedYear === '2024' ? 'title2024' : ''}`}>
     <span id="mtitle">Speakers</span>
   </h1>
-  <img  classname="mbadal" style={{position:'fixed' ,width:"60%", bottom:"0%" , right:"0%"}} src={badal} alt=""/>
-  <img  classname="mbadal" style={{position:'fixed' ,width:"60%", top:"40%" , left:"-15%"}} src={badal} alt=""/>
+  <img  classname="mbadal" style={{position:'fixed',display:"none" ,width:"60%", bottom:"0%" , right:"0%"}} src={badal} alt=""/>
+  <img  classname="mbadal" style={{position:'fixed',display:"none" ,width:"60%", top:"40%" , left:"-15%"}} src={badal} alt=""/>
   <div className="mprogress-bar" /*style={{ display: showTitle ? 'block' : 'none' }}*/>
         <div ref={progressBarRef} className="mprogress"></div>
       </div>
@@ -428,7 +428,7 @@ const Speakersm = () => {
           return (
             <li key={index} className={`o-mslider__item ${speakerClass}`}>
               <div className='mspeaker-tile'>
-                <img className="o-mslider__img" src={speaker.image} alt="" />
+               <div className='image_bg_25'> </div><img className="o-mslider__img" src={speaker.image} alt="" />
                 <p className='mspeaker-desg'>{speaker.designation}</p>
                 <p className='mspeaker-desc'>{speaker.description}</p>
                 <p className={`mSpeaker-name `}>{speaker.name}<br /> {speaker.surname} 

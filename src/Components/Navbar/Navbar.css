@@ -125,6 +125,7 @@
         padding: 10px 0px;
         background-color: transparent;
         z-index: 5777775;
+      
         height: 5vh;
         display: block;
         width: 100%;
@@ -134,12 +135,13 @@
        
         height: 150vh;
        display: flex;
+       flex-direction: column;
         background-color: transparent;
         justify-content: center;
         list-style: none;
         gap: 0vh;
        
-        
+        z-index: 777;
         clip-path: circle(100px at 100% -10%);
         transition: all 0.5s;
        transform: translateY(-20px);
@@ -158,11 +160,12 @@
         color: white;
     }
  .nav-menu.open {
-    background-color: transparent;
+    
     display: flex; /* Display when open class is present */
-    background-color: transparent;
+   
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.912);
+    z-index: 777;
+    background-color: rgba(236, 8, 8, 0.808);
    transform: translateY(-4%);
     max-height: 150vh; /* Adjust the max-height based on your content */
     opacity: 1;

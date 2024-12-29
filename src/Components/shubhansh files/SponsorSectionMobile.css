@@ -1,5 +1,11 @@
+@font-face {
+    font-family: 'Protomolecule-regular';
+    src: url('../../2025-Components/Fonts/Protomolecule-Regular.ttf') format('truetype');
+  }
+
 .sponsor-wrapper-Mobile{
-    background: #EAE6E6;
+    font-family: 'Protomolecule-regular', sans-serif;
+    background: #000000;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -28,7 +34,7 @@
 
 .sponsor-heading-Mobile{
     font-size: 66px;
-    color: #eb0028;
+    color: #ffffff;
     font-family: 'poppins', sans-serif;
     font-weight: 900;
     position: relative;
@@ -70,5 +76,5 @@
 
 .and{
     color: #00000000;
-    -webkit-text-stroke: 2px #eb0028;
+    -webkit-text-stroke: 2px #ffffff;
 }
