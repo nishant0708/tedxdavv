@@ -4,7 +4,7 @@
     background-color: black;
     z-index: 2;
     display: flex;
-    font-family: "Poppins";
+   font-family: "Inter", serif;
 }
 
 .cards {
@@ -34,7 +34,7 @@
     margin-top: 1vh;
     text-align: right;
     z-index: 2;
-    font-family: "Poppins";
+   font-family: "Inter", serif;
 }
 
 button {
