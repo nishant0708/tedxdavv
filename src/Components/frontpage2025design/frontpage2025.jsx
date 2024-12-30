@@ -4,10 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./frontpage2025.css";
 import About from "../../2025-Components/About/About";
 import SideMarquee2 from "../../2025-Components/sidemarquee2/sidemarquee2";
-import TypePara from "../../2025-Components/TypePara/TypePara";
 import TypePara2 from "../../2025-Components/typepara2/typepara2";
-
-
 
 const FrontPage2025 = ({ onScaleComplete }) => {
   const containerRef = useRef(null);
@@ -16,19 +13,23 @@ const FrontPage2025 = ({ onScaleComplete }) => {
   const taglineRef = useRef();
   const zeroRef = useRef();
 
-
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    // Increased mobile delay from 1 to 2.5 seconds
+    const startDelay = window.innerWidth <= 768 ? 2.5 : 0;
+
     const timeline = gsap.timeline({
+      delay: startDelay,
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top top",
+        start: "top 10%",
         end: "+=2000",
         scrub: true,
-        
         pin: true,
-        onLeave: () => onScaleComplete && onScaleComplete(),
+        onLeave: () => {
+          gsap.delayedCall(0.5, () => onScaleComplete && onScaleComplete());
+        },
       },
     });
 
@@ -52,15 +53,15 @@ const FrontPage2025 = ({ onScaleComplete }) => {
     );
 
     textRefs.current.forEach((text, index) => {
+      const mobileDelay = window.innerWidth <= 768 ? index * 0.1 : 0.2;
       timeline.fromTo(
         text,
         { opacity: 0, y: 50 },
         { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-        "+=0.2"
+        `+=${mobileDelay}`
       );
     });
 
-    // Fade out both tagline and text elements together
     timeline.to(
       [taglineRef.current, ...textRefs.current],
       { opacity: 0, duration: 1, ease: "power2.out" },
@@ -74,7 +75,7 @@ const FrontPage2025 = ({ onScaleComplete }) => {
     const xOffset = (zeroBounds.left + zeroBounds.width / 2) - (containerBounds.left + containerBounds.width / 2);
     const yOffset = (zeroBounds.top + zeroBounds.height / 2) - (containerBounds.top + containerBounds.height / 2);
 
-    const leftOffset = 40;
+    const leftOffset = window.innerWidth <= 768 ? 20 : 40;
 
     timeline.to(containerRef.current, {
       scale: 30,
@@ -82,13 +83,16 @@ const FrontPage2025 = ({ onScaleComplete }) => {
       duration: 1.5,
       ease: "power2.inOut",
       transformOrigin: `${50 + ((xOffset - leftOffset) / containerBounds.width) * 100}% ${50 + (yOffset / containerBounds.height) * 100}%`,
-      onComplete: () => < frontpage2025 onScaleComplete ={() => {
-        <About/>
-      }} />
+      onComplete: () => {
+        // Increased mobile transition delay from 0.3 to 0.8
+        const transitionDelay = window.innerWidth <= 768 ? 0.8 : 0;
+        gsap.delayedCall(transitionDelay, () => onScaleComplete && onScaleComplete());
+      }
     });
+
     ScrollTrigger.refresh();
+
     return () => {
-      // Clear all GSAP animations and ScrollTrigger instances
       timeline.kill();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
@@ -113,12 +117,9 @@ const FrontPage2025 = ({ onScaleComplete }) => {
 
   return (
     <div className="main-container25">
-      
       <div ref={containerRef} className="frontpage-container25">
-       
-      <SideMarquee2/>
-
-      <div className="landing_2025_stars"></div>
+        <SideMarquee2/>
+        <div className="landing_2025_stars"></div>
         <div className="line-overlay25"></div>
         <div className="columns-container25">
           <div className="column25">
