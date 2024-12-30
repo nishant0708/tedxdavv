@@ -7,7 +7,18 @@ import SideMarquee2 from "../../2025-Components/sidemarquee2/sidemarquee2";
 import TypePara from "../../2025-Components/TypePara/TypePara";
 import TypePara2 from "../../2025-Components/typepara2/typepara2";
 
-
+// Debounce helper function
+const debounce = (func, wait) => {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
 
 const FrontPage2025 = ({ onScaleComplete }) => {
   const containerRef = useRef(null);
@@ -16,19 +27,23 @@ const FrontPage2025 = ({ onScaleComplete }) => {
   const taglineRef = useRef();
   const zeroRef = useRef();
 
-
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    // Debounced refresh function
+    const debouncedRefresh = debounce(() => {
+      ScrollTrigger.refresh();
+    }, 250);
 
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top top",
+        start: "top",
         end: "+=2000",
         scrub: true,
-        
+        markers: true,
         pin: true,
-        onLeave: () => onScaleComplete && onScaleComplete(),
+        onLeave: debounce(() => onScaleComplete && onScaleComplete(), 250),
       },
     });
 
@@ -60,7 +75,6 @@ const FrontPage2025 = ({ onScaleComplete }) => {
       );
     });
 
-    // Fade out both tagline and text elements together
     timeline.to(
       [taglineRef.current, ...textRefs.current],
       { opacity: 0, duration: 1, ease: "power2.out" },
@@ -82,13 +96,17 @@ const FrontPage2025 = ({ onScaleComplete }) => {
       duration: 1.5,
       ease: "power2.inOut",
       transformOrigin: `${50 + ((xOffset - leftOffset) / containerBounds.width) * 100}% ${50 + (yOffset / containerBounds.height) * 100}%`,
-      onComplete: () => < frontpage2025 onScaleComplete ={() => {
-        <About/>
-      }} />
+      onComplete: debounce(() => {
+        onScaleComplete && onScaleComplete();
+      }, 250)
     });
+
+    // Add debounced window resize handler
+    window.addEventListener('resize', debouncedRefresh);
+    
     ScrollTrigger.refresh();
     return () => {
-      // Clear all GSAP animations and ScrollTrigger instances
+      window.removeEventListener('resize', debouncedRefresh);
       timeline.kill();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
@@ -96,7 +114,7 @@ const FrontPage2025 = ({ onScaleComplete }) => {
 
   useEffect(() => {
     const letters = document.querySelectorAll(".tagline-letter25");
-    const addBlinkingEffect = () => {
+    const addBlinkingEffect = debounce(() => {
       letters.forEach(letter => {
         const shouldBlink = Math.random() > 0.8;
         if (shouldBlink) {
@@ -105,7 +123,7 @@ const FrontPage2025 = ({ onScaleComplete }) => {
           letter.classList.remove("blinking25");
         }
       });
-    };
+    }, 250);
 
     const interval = setInterval(addBlinkingEffect, 5000);
     return () => clearInterval(interval);
@@ -113,32 +131,29 @@ const FrontPage2025 = ({ onScaleComplete }) => {
 
   return (
     <div className="main-container25">
-      
       <div ref={containerRef} className="frontpage-container25">
-       
-      <SideMarquee2/>
-
-      <div className="landing_2025_stars"></div>
+        <SideMarquee2/>
+        <div className="landing_2025_stars"></div>
         <div className="line-overlay25"></div>
         <div className="columns-container25">
           <div className="column25">
             <span ref={el => (textRefs.current[0] = el)} className="text25">
-             <TypePara2 para="CAPTURING THE CONNECTION BETWEEN THE SEEN AND THE UNSEEN"/>
+              <TypePara2 para="CAPTURING THE CONNECTION BETWEEN THE SEEN AND THE UNSEEN"/>
             </span>
           </div>
           <div className="column25">
             <p ref={el => (textRefs.current[1] = el)} className="text25">
               <div className="text2">
-               <TypePara2 para="SNAPSHOTS OF IDEAS THAT RESONATED WITHIN AND BEYOND"/>
+                <TypePara2 para="SNAPSHOTS OF IDEAS THAT RESONATED WITHIN AND BEYOND"/>
               </div>
             </p>
           </div>
           <div className="column25 combined-column25">
             <p ref={el => (textRefs.current[2] = el)} className="text25">
-             <TypePara2 para="UNMASKING THE HIDDEN TRUTHS THROUGH WORDS THAT INSPIRE"/>
+              <TypePara2 para="UNMASKING THE HIDDEN TRUTHS THROUGH WORDS THAT INSPIRE"/>
             </p>
             <p ref={el => (textRefs.current[3] = el)} className="text25">
-             <TypePara2 para="OUR SPEAKERS SHARE STORIES THAT IGNITE YOUR INNER JOURNEY"/>
+              <TypePara2 para="OUR SPEAKERS SHARE STORIES THAT IGNITE YOUR INNER JOURNEY"/>
             </p>
           </div>
         </div>
