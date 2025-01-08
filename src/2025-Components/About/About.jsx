@@ -49,8 +49,9 @@ const About = () => {
 
                 <TypePara para='The search for purpose leads us through uncertainty, where external pressures often cloud our inner voice. Breaking free from these constraints uncovers raw truths, revealing the core of The Within. It’s a journey toward clarity, where chaos gives way to self-realization.' />
 
-                <div className=' self-start md:mt-10'>
-                    <TypeSmall para='Be a Part of a Conversation That Goes Beyond the Facade.' />
+                <div className=' self-start flex flex-col md:mt-10'>
+                    <TypeSmall para='Be a Part of a Conversation ' />
+                    <TypeSmall para='That Goes Beyond the Facade.' />
                 </div>
             </span>
 

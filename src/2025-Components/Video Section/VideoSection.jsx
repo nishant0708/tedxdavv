@@ -1,18 +1,71 @@
 import React, { useEffect, useState } from 'react'
 import Marquee from 'react-fast-marquee'
-import ReactPlayer from 'react-player'
+import ReactParallaxTilt from 'react-parallax-tilt'
+import bg from '../../Images/highlights bg.svg'
+import TypeHeading from '../TypeHeading/TypeHeading'
+import TypePara from '../TypePara/TypePara'
+import TypeSmall from '../Typing Small/TypingSmall'
+import gsap from 'gsap'
 
 const VideoSection = () => {
 
+    useEffect(() => {
+        gsap.fromTo('.highlightsBG', {
+            opacity: 0,
+        },{
+            opacity: 0,
+            scrollTrigger:{
+                trigger: '.highlightsBG',
+                start: 'top center',
+                end: 'top top',
+                scrub: true,
+                markers: false,
+            },
+            ease: 'sine.out'
+        })
+
+        gsap.fromTo('.highlightsText',{
+            xPercent: -100,
+        },{
+            xPercent: 0,
+            scrollTrigger:{
+                trigger: '.highlightsText',
+                toggleActions: 'play none none reverse',
+                start: 'top 50%',
+                scrub: false,
+                markers: false
+            },
+            duration: 0.8,
+            ease: 'sine.out',
+        })
+        gsap.fromTo('.withoutSound',{
+            opacity: 0,
+            xPercent: 100,
+        },{
+            opacity: 1,
+            xPercent: 0,
+            scrollTrigger:{
+                trigger: '.highlightsText',
+                toggleActions: 'play none none reverse',
+                start: 'top 50%',
+                scrub: false,
+                markers: false
+            },
+            duration: 0.8,
+            ease: 'sine.out',
+        })
+    },[])
+
   return (
-    <div className=' relative flex justify-center  items-center min-h-screen bg-black z-20'>
+    <div className=' relative flex flex-col-reverse py-[80px] lg:flex-row justify-center gap-[50px] lg:gap-[100px] items-center w-screen min-h-screen bg-black z-20'>
+        
+        <Marquee autoFill={true} className=' blur-[7px] min-w-[120vw] rotate-12 text-[200px] font-black absolute  bg-gradient-to-b from-purple-500  to-pink-500 '>HIGHLIGHTS</Marquee>
 
-
-{/* https://youtube.com/shorts/jZRbOFMqESs?feature=share */}
-
-        <div className=' relative rounded-3xl border-2 border-white bg-slate-50 bg-opacity-15 z-30 w-min'> 
-            {/* <div className=' absolute rounded-3xl  w-[330px] h-[590px] mt-14 ml-9 bg-gradient-to-r from-purple-600 to-pink-500'></div> */}
-            <iframe className='withoutSound  relative pointer-events-none my-6 mx-4 z-30 rounded-3xl'
+        <ReactParallaxTilt className='withoutSound'>
+            
+            {/* <h2 className=' absolute uppercase w-fit ml-[200px] leading-[50px] mix-blend-difference z-40 overflow-hidden text-left  font-black text-[60px] max-w-[90vw] text-white '>Reliving the magic</h2> */}
+        
+            <iframe className=' border-y-8 border-x-2 border-x-red-950  relative pointer-events-none z-30 rounded-3xl'
                 width="330" 
                 height="590" 
                 src="https://www.youtube.com/embed/jZRbOFMqESs?autoplay=1&loop=1&playlist=jZRbOFMqESs&controls=0&modestbranding=1&mute=1&showinfo=0&rel=0" 
@@ -21,8 +74,18 @@ const VideoSection = () => {
                 allow="autoplay" 
                 allowFullScreen
             ></iframe> 
-        </div>
-        
+
+        </ReactParallaxTilt>
+
+        <span className=' uppercase text-left  text-white font-thin overflow-x-hidden ' style={{ display: 'flex', flexDirection: 'column', rowGap: '50px'}} >
+            <h2 className='highlightsText uppercase w-min overflow-clip leading-[48px] lg:leading-[70px]  z-40 text-left  font-black text-[60px] lg:text-[80px] max-w-[90vw] text-white '>Reliving the magic</h2>
+
+
+                <p className='highlightsText text-justify hidden md:block leading-8 max-w-[485px]'>
+                Last year's event was nothing short of extraordinary—a perfect blend of creativity, passion, and inspiration! Thrilling talks by our incredible speakers sparked ideas and the energy was contagious, the vibe unmatched—relive the magic through our highlights video!
+                </p>
+        </span>
+
     </div>
   )
 }
