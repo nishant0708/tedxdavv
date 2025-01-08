@@ -18,13 +18,14 @@
   background: url('../../Images/stars1.jpg') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
-  opacity: 0.20  !important; /* Opacity for the background image */
-  z-index: 3; /* Place it behind the content */
+  opacity: 0.20  !important; 
+  z-index: 3; 
 }
 .frontpage-container25 {
   font-family: 'Protomolecule-regular', sans-serif;
   position: relative;
   z-index: 2;
+  inset: 0px auto auto 0px !important;
   width: 100%;
   height: 100vh; /* Occupy full viewport height */
   overflow: hidden;
@@ -228,7 +229,6 @@
 @media (max-width: 768px) {
  
   .columns-container25 {
-  
     gap: 2%;
     padding: 10px;
   }
@@ -250,7 +250,9 @@
 }
 
 @media (max-width: 480px) {
-  
+  .main-container25{
+    margin-top: 200px;
+  }
   .columns-container25 {
     padding: 5px;
     top: 10%;
@@ -260,7 +262,10 @@
     width: 50%; /* Adjust text width */
   }
   .text2{
-    left: -60px;
+    left: -40px;
+  }
+  .year-container25{
+    top:50%
   }
   .year25 {
     padding: 5px;

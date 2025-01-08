@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import Speakerf from '../nik-pages/Speakerf';
+
 import FaqPage from '../../pages/questions/faqSection';
 import Landing_page from '../../2025-Components/Landing_page/Landing_page';
 import FrontPage2025 from '../frontpage2025design/frontpage2025';
