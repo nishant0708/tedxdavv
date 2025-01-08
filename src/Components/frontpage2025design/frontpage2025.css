@@ -4,10 +4,12 @@
 }
 
 .main-container25 {
-  position: relative;
+  position: relative !important;
   z-index: 3;
  background-color: black;
-  min-height: 200vh; /* Extend height for scroll animation */
+  min-height: 100vh; /* Extend height for scroll animation */
+  
+
 }
 .main-container25 .landing_2025_stars{
   position: absolute;
@@ -26,6 +28,8 @@
   position: relative;
   inset: 0px auto auto 0px !important;
   z-index: 2;
+  inset:0px auto auto 0px !important;
+
   width: 100%;
   height: 100vh; /* Occupy full viewport height */
   overflow: hidden;
@@ -71,6 +75,7 @@
   text-decoration-color: transparent;
   text-underline-offset: 5px;
   transition: text-decoration-color 1s ease-in-out;
+
 }
 .text2{
   position: relative;
@@ -261,7 +266,7 @@
     width: 50%; /* Adjust text width */
   }
   .text2{
-    left: -60px;
+    left: -40px;
   }
   .year25 {
     padding: 5px;

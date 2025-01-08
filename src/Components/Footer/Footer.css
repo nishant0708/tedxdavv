@@ -78,9 +78,11 @@
     padding: 2rem 0rem 2rem 0;
     font-size: 12pt;
     line-height: 1.5rem;
+   
 }
 .mailus .button{
     height: 2.7rem;
+    background-color: #E62B1E;;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
@@ -88,7 +90,7 @@
     height: 2.7rem;
     width: 300px;
     padding: 0.5rem;
-    transform: translateY(-5px);
+    transform: translateY(-2px);
 }
 .copyright p{
     text-align: center;

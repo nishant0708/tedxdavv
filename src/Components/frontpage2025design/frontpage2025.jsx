@@ -4,7 +4,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./frontpage2025.css";
 import About from "../../2025-Components/About/About";
 import SideMarquee2 from "../../2025-Components/sidemarquee2/sidemarquee2";
+import TypePara from "../../2025-Components/TypePara/TypePara";
 import TypePara2 from "../../2025-Components/typepara2/typepara2";
+
+// Debounce helper function
+const debounce = (func, wait) => {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
 
 const FrontPage2025 = ({ onScaleComplete }) => {
   const containerRef = useRef(null);
@@ -16,20 +30,19 @@ const FrontPage2025 = ({ onScaleComplete }) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Increased mobile delay from 1 to 2.5 seconds
-    const startDelay = window.innerWidth <= 768 ? 2.5 : 0;
+    // Debounced refresh function
+    const debouncedRefresh = debounce(() => {
+      ScrollTrigger.refresh();
+    }, 250);
 
     const timeline = gsap.timeline({
-      delay: startDelay,
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 10%",
+        start: "top",
         end: "+=2000",
         scrub: true,
         pin: true,
-        onLeave: () => {
-          gsap.delayedCall(0.5, () => onScaleComplete && onScaleComplete());
-        },
+        onLeave: debounce(() => onScaleComplete && onScaleComplete(), 250),
       },
     });
 
@@ -53,12 +66,11 @@ const FrontPage2025 = ({ onScaleComplete }) => {
     );
 
     textRefs.current.forEach((text, index) => {
-      const mobileDelay = window.innerWidth <= 768 ? index * 0.1 : 0.2;
       timeline.fromTo(
         text,
         { opacity: 0, y: 50 },
         { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-        `+=${mobileDelay}`
+        "+=0.2"
       );
     });
 
@@ -75,7 +87,7 @@ const FrontPage2025 = ({ onScaleComplete }) => {
     const xOffset = (zeroBounds.left + zeroBounds.width / 2) - (containerBounds.left + containerBounds.width / 2);
     const yOffset = (zeroBounds.top + zeroBounds.height / 2) - (containerBounds.top + containerBounds.height / 2);
 
-    const leftOffset = window.innerWidth <= 768 ? 20 : 40;
+    const leftOffset = 40;
 
     timeline.to(containerRef.current, {
       scale: 30,
@@ -83,16 +95,17 @@ const FrontPage2025 = ({ onScaleComplete }) => {
       duration: 1.5,
       ease: "power2.inOut",
       transformOrigin: `${50 + ((xOffset - leftOffset) / containerBounds.width) * 100}% ${50 + (yOffset / containerBounds.height) * 100}%`,
-      onComplete: () => {
-        // Increased mobile transition delay from 0.3 to 0.8
-        const transitionDelay = window.innerWidth <= 768 ? 0.8 : 0;
-        gsap.delayedCall(transitionDelay, () => onScaleComplete && onScaleComplete());
-      }
+      onComplete: debounce(() => {
+        onScaleComplete && onScaleComplete();
+      }, 250)
     });
 
+    // Add debounced window resize handler
+    window.addEventListener('resize', debouncedRefresh);
+    
     ScrollTrigger.refresh();
-
     return () => {
+      window.removeEventListener('resize', debouncedRefresh);
       timeline.kill();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
@@ -100,7 +113,7 @@ const FrontPage2025 = ({ onScaleComplete }) => {
 
   useEffect(() => {
     const letters = document.querySelectorAll(".tagline-letter25");
-    const addBlinkingEffect = () => {
+    const addBlinkingEffect = debounce(() => {
       letters.forEach(letter => {
         const shouldBlink = Math.random() > 0.8;
         if (shouldBlink) {
@@ -109,7 +122,7 @@ const FrontPage2025 = ({ onScaleComplete }) => {
           letter.classList.remove("blinking25");
         }
       });
-    };
+    }, 250);
 
     const interval = setInterval(addBlinkingEffect, 5000);
     return () => clearInterval(interval);
@@ -124,22 +137,22 @@ const FrontPage2025 = ({ onScaleComplete }) => {
         <div className="columns-container25">
           <div className="column25">
             <span ref={el => (textRefs.current[0] = el)} className="text25">
-             <TypePara2 para="CAPTURING THE CONNECTION BETWEEN THE SEEN AND THE UNSEEN"/>
+              <TypePara2 para="WHAT DEFINES YOUR TRUE SELF—THE IMAGE YOU SHOW OR THE THOUGHTS YOU KEEP HIDDEN? "/>
             </span>
           </div>
           <div className="column25">
             <p ref={el => (textRefs.current[1] = el)} className="text25">
               <div className="text2">
-               <TypePara2 para="SNAPSHOTS OF IDEAS THAT RESONATED WITHIN AND BEYOND"/>
+                <TypePara2 para="WHAT HAPPENS WHEN WE EMBRACE OUR CHAOS INSTEAD OF HIDING IT? CAN DISORDER SPARK GROWTH OR GENIUS? "/>
               </div>
             </p>
           </div>
           <div className="column25 combined-column25">
             <p ref={el => (textRefs.current[2] = el)} className="text25">
-             <TypePara2 para="UNMASKING THE HIDDEN TRUTHS THROUGH WORDS THAT INSPIRE"/>
+              <TypePara2 para="IF THE BODY IS A UNIVERSE OF CELLS AND SIGNALS, ARE YOU AN INDIVIDUAL OR A COLLECTIVE?  "/>
             </p>
             <p ref={el => (textRefs.current[3] = el)} className="text25">
-             <TypePara2 para="OUR SPEAKERS SHARE STORIES THAT IGNITE YOUR INNER JOURNEY"/>
+              <TypePara2 para="OUR SPEAKERS SHARE STORIES THAT SPARK YOUR INNER JOURNEY, LEADING YOU TO NEW DEPTHS OF SELF-DISCOVERY."/>
             </p>
           </div>
         </div>
