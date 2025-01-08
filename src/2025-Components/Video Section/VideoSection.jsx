@@ -59,13 +59,15 @@ const VideoSection = () => {
   return (
     <div className=' relative flex flex-col-reverse py-[80px] lg:flex-row justify-center gap-[50px] lg:gap-[100px] items-center w-screen min-h-screen bg-black z-20'>
         
-        <Marquee autoFill={true} className=' blur-[7px] min-w-[120vw] rotate-12 text-[200px] font-black absolute  bg-gradient-to-b from-purple-500  to-pink-500 '>HIGHLIGHTS</Marquee>
+        <Marquee autoFill={true} className=' blur-[7px] min-w-[120vw] rotate-12 text-[200px] font-black absolute  bg-gradient-to-b from-purple-500  to-pink-500 '>
+            <p className=' mr-20'>HIGHLIGHTS</p>
+        </Marquee>
 
         <ReactParallaxTilt className='withoutSound'>
             
             {/* <h2 className=' absolute uppercase w-fit ml-[200px] leading-[50px] mix-blend-difference z-40 overflow-hidden text-left  font-black text-[60px] max-w-[90vw] text-white '>Reliving the magic</h2> */}
         
-            <iframe className=' border-y-8 border-x-2 border-x-red-950  relative pointer-events-none z-30 rounded-3xl'
+            <iframe className=' border-y-0 border-x-[3px] border-x-red-950  relative pointer-events-none z-30 rounded-md md:rounded-3xl'
                 width="330" 
                 height="590" 
                 src="https://www.youtube.com/embed/jZRbOFMqESs?autoplay=1&loop=1&playlist=jZRbOFMqESs&controls=0&modestbranding=1&mute=1&showinfo=0&rel=0" 
