@@ -42,7 +42,7 @@ const TypeSmall = (props) => {
     }, [hasSmallPlayed]);
 
     return (
-        <span className='typing_text_para relative' ref={typeSmallRef} 
+        <span className='typing_text_para text-wrap relative' ref={typeSmallRef} 
             style={{width: '100px',}}  
         >
             {hasSmallPlayed && (

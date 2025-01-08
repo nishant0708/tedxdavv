@@ -7,6 +7,7 @@ import FrontPage2025 from '../frontpage2025design/frontpage2025';
 import About from '../../2025-Components/About/About';
 import Speakersm from '../Speakers-mobile/Speakersm';
 import SliderComponent from '../Stry/SliderComponent';
+import VideoSection from '../../2025-Components/Video Section/VideoSection';
 
 const Main = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 968);
@@ -34,6 +35,7 @@ const Main = () => {
       <FrontPage2025 />
       <About />
       {isMobile ? <Speakersm /> : <SliderComponent />}
+      <VideoSection />
       <FaqPage />
     </div>
   );
